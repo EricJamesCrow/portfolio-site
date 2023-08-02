@@ -16,7 +16,8 @@ const CameraControls = () => {
 
 const Points = () => {
   const imgTex = useLoader(THREE.TextureLoader, './circle.png');
-  const bufferRef = useRef<THREE.BufferAttribute>();
+  const bufferRef = useRef<THREE.BufferAttribute | null>(null);
+
 
   let t = 0;
   let f = 0.002;
