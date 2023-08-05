@@ -1,5 +1,18 @@
+"use client";
 import './globals.css'
 import Providers from '@/components/Providers'
+import { Inter } from 'next/font/google'
+import {NextUIProvider} from "@nextui-org/react";
+
+// components
+import NavBar from '@/components/layout/navbar'
+
+const inter = Inter({
+  weight: ['300', '400', '500', '700'],
+  style: ['normal'],
+  subsets: ['latin'],
+})
+
 
 export const metadata = {
   title: 'NextJS-Typescript-NextAuth-Prisma-Redux-Template',
@@ -13,11 +26,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <link rel="preload" as="image" href="/chevron-down.svg" />
-      <body>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <body className={inter.className}>
+      {/* <NextUIProvider> */}
         <Providers>
+          <NavBar />
         {children}
         </Providers>
+      {/* </NextUIProvider> */}
         </body>
     </html>
   )

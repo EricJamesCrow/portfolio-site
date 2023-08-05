@@ -1,5 +1,4 @@
 "use client";
-import styles from './ripple.module.css';
 import * as THREE from 'three';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas, extend, useFrame, useLoader, useThree } from '@react-three/fiber';
@@ -102,7 +101,7 @@ const AnimationCanvas = () => {
 
 const Ripple: React.FC = () => {
     return (
-        <div className={styles.anim}>
+        <div className="w-screen h-screen bg-custom-color">
             <Suspense fallback={<div>Loading...</div>}>
                 <AnimationCanvas />
             </Suspense>
