@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-// background
+// components
+import Hero from "@/components/home/hero";
 import Ripple from "@/components/ripple";
 
 const Home: NextPage = () =>  {
@@ -12,7 +13,8 @@ const Home: NextPage = () =>  {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Ripple/>
+        <Hero/>
+        {/* <Ripple/> */}
       </main>
     </>
   );
