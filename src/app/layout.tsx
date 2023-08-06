@@ -1,9 +1,12 @@
 import './globals.css'
 import Providers from '@/components/Providers'
 import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 
 // components
 import NavBar from '@/components/layout/navbar'
+
+const sohneLight = localFont({ src: '../../public/fonts/Sohne-Light.otf' })
 
 const inter = Inter({
   weight: ['300', '400', '500', '700'],

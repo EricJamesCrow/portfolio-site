@@ -1,5 +1,16 @@
 import styles from './hero.module.css';
 import Ripple from '@/components/ripple';
+import localFont from 'next/font/local'
+import { Quicksand } from 'next/font/google'
+
+const quicksand = Quicksand({
+    weight: ['300', '400', '500', '700'],
+    style: ['normal'],
+    subsets: ['latin'],
+  })
+  
+
+const railwayThin = localFont({ src: '../../../../public/fonts/Raleway-Thin.ttf' })
 
 const Hero: React.FC = () => {
     return (
@@ -7,10 +18,9 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 z-0">
                 <Ripple/>
             </div>
-            <div className="relative z-10 mx-8 mt-6 text-white lg:mx-16 lg:mt-12">
-                <h1 className={`${styles.textGradient} font-semibold text-[48px] bg-gradient-custom mb-4 lg:text-[96px]`}>Crow Development</h1>
-                <h2 className={`text-[24px] mb-2 lg:text-[48px] max-w-[676px]`}>Innovative web solutions for your business</h2>
-                <h3 className={`font-light text-[18px] mb-6 max-w-[600px] lg:text-[32px]`}>We design and build stunning, user-friendly websites that help your business grow</h3>
+            <div className="relative z-10 mx-8 mt-6 text-white lg:mx-16 lg:mt-6">
+                <h1 className={`${styles.textGradient} ${quicksand.className} font-light text-[48px] bg-gradient-custom lg:text-[96px]`}>CrowDevelopment</h1>
+                <h2 className={`text-[24px] mb-4 font-thin lg:text-[42px] max-w-[645px]`}>Custom-built web applications for your business</h2>
                 <button className="h-11 
                 w-full 
                 rounded-md 
@@ -22,9 +32,9 @@ const Hero: React.FC = () => {
                 transition-colors 
                 duration-200 
                 cursor-pointer
-                max-w-[400px]
-                lg:text-[24px]
-                lg:h-[70px]
+                max-w-[350px]
+                lg:text-[20px]
+                lg:h-[60px]
                 ">Request a quote</button>
             </div>
         </div>

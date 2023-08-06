@@ -8,7 +8,7 @@ const CameraControls = () => {
   return (
     <OrbitControls
       autoRotate
-      autoRotateSpeed={-0.2}
+      autoRotateSpeed={-0.1}
     />
   );
 }
@@ -75,7 +75,7 @@ const Points = () => {
       <pointsMaterial
         attach="material"
         map={imgTex}
-        color={0x00AAFF}
+        color={0x708090}
         size={0.5}
         sizeAttenuation
         transparent={false}
