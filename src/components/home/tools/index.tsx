@@ -15,6 +15,7 @@ import JavaScript from '../../../../public/javascript.svg';
 
 const autoplayOptions = {
     delay: 2000,
+    direction: 'forward'
   }
 
 const tools = [
@@ -58,8 +59,9 @@ const tools = [
 const Tools: React.FC = () => {
     const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay(autoplayOptions)]);
 
+
     return (
-    <div ref={emblaRef} className="embla relative z-20 h-[264px] bg-tools-color flex justify-center">
+    <div ref={emblaRef} className="embla relative z-20 h-[264px] bg-tools-color flex justify-center pointer-events-none">
         <div className="flex space-x-5 w-full">
             {tools.map((tool) => (
                 <div key={tool.id} className="relative flex-none w-full sm:w-1/3 md:w-1/4 lg:w-1/5 flex items-center justify-center">

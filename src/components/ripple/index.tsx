@@ -1,7 +1,7 @@
 "use client";
 import * as THREE from 'three';
 import { OrbitControls } from '@react-three/drei';
-import { Canvas, extend, useFrame, useLoader, useThree } from '@react-three/fiber';
+import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { Suspense, useCallback, useMemo, useRef } from 'react';
 
 const CameraControls = () => {
