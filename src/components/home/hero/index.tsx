@@ -1,23 +1,10 @@
-import styles from './hero.module.css';
-import Ripple from '@/components/ripple';
 import localFont from 'next/font/local'
-import { Quicksand } from 'next/font/google'
-
-const quicksand = Quicksand({
-    weight: ['300', '400', '500', '700'],
-    style: ['normal'],
-    subsets: ['latin'],
-  })
-  
 
 const railwayThin = localFont({ src: '../../../../public/fonts/Raleway-Thin.ttf' })
 
 const Hero: React.FC = () => {
     return (
         <div className="bg-custom-color h-[90vh]">
-            <div className="absolute inset-0 z-0">
-                <Ripple/>
-            </div>
             <div className="relative z-10 mx-8 mt-6 text-white lg:mx-16 lg:mt-6">
                 <h1 className={`${railwayThin.className} font-light text-[52px] bg-gradient-custom lg:text-[96px]`}>
                 <span className="block lg:inline-block">Crow</span>Development

@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         'custom-color': '#161616',
         'custom-gray': '#F6F7F8',
+        'tools-color': '#1A1A1A',
         'gradient-custom': 'linear-gradient(97.13deg, #E9E9E9 0%, #515151 100%)',
       },
       fontSize: {
