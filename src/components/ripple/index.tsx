@@ -9,6 +9,8 @@ const CameraControls = () => {
     <OrbitControls
       autoRotate
       autoRotateSpeed={-0.1}
+      enableRotate={false}
+      enableZoom={false}
     />
   );
 }
