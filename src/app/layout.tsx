@@ -1,12 +1,9 @@
 import './globals.css'
 import Providers from '@/components/Providers'
 import { Inter } from 'next/font/google'
-import localFont from 'next/font/local'
 
 // components
 import NavBar from '@/components/layout/navbar'
-
-const sohneLight = localFont({ src: '../../public/fonts/Sohne-Light.otf' })
 
 const inter = Inter({
   weight: ['300', '400', '500', '700'],
@@ -16,8 +13,8 @@ const inter = Inter({
 
 
 export const metadata = {
-  title: 'NextJS-Typescript-NextAuth-Prisma-Redux-Template',
-  description: 'Template for NextJS 13 configured with TypeScript, NextAuth, Prisma, and Redux',
+  title: 'CrowDevelopment, LLC',
+  description: 'CrowDevelopment, LLC is a software development company based in the United States. We specialize in building web applications and websites for small businesses.',
 }
 
 export default function RootLayout({

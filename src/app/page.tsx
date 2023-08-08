@@ -4,6 +4,7 @@ import Head from "next/head";
 import Ripple from "@/components/ripple";
 import Hero from "@/components/home/hero";
 import Tools from "@/components/home/tools";
+import Testimonials from "@/components/home/testimonials";
 
 const Home: NextPage = () =>  {
   return (
@@ -19,6 +20,8 @@ const Home: NextPage = () =>  {
       </div>
         <Hero/>
         <Tools/>
+        <Testimonials/>
+        <div className="relative bg-custom-color min-h-[264px] p-12 font-light flex justify-between"></div>
       </main>
     </>
   );
