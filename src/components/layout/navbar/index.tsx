@@ -1,16 +1,11 @@
 "use client";
 import React from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, 
-  NavbarMenuToggle, Link, Button} from "@nextui-org/react";
+  NavbarMenuToggle, Link } from "@nextui-org/react";
 import Image from "next/image.js";
 
 const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  // const [mounted, setMounted] = useState(false);
-  
-  // useEffect(() => {
-  //   setMounted(true)
-  // }, [])
 
   const handleMenuOpenChange = (isOpen: boolean | undefined) => {
     if (isOpen !== undefined) {

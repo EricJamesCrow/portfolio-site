@@ -14,7 +14,6 @@ const Home: NextPage = () =>  {
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
       <div className="fixed inset-0 z-0">
         <Ripple/>
       </div>
@@ -22,7 +21,6 @@ const Home: NextPage = () =>  {
         <Tools/>
         <Testimonials/>
         <div className="relative bg-custom-color min-h-[264px] p-12 font-light flex justify-between"></div>
-      </main>
     </>
   );
 }
