@@ -9,6 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        'gray-200': '#F6F7F8'
+      },
+      boxShadow: {
+        'custom': '0px 0px 2px 0px rgba(0, 0, 0, 0.25)'
+      },
       colors: {
         'custom-color': '#161616',
         'custom-gray': '#F6F7F8',

@@ -1,44 +1,19 @@
-'use client';
-import { usePathname } from 'next/navigation';
-import React, { useState } from 'react';
-import styles from './admin.module.css';
-import Image from 'next/image';
+import React from 'react';
 
-// components
-import SideNav from '../../components/admin/sidenav/sidenav';
+import SideNav from '@/components/admin/sidenav';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const getTitle = () => {
-    const path = pathname.split('/').filter(Boolean); // Split the route into parts
-    return path.length > 1 ? path[1].charAt(0).toUpperCase() + path[1].slice(1) : 'Admin Dashboard'; // Return the capitalized second part of the path, or "Admin" if it doesn't exist
-  }
-
 
   return (
-    <>
-      <SideNav isOpen={isOpen} handleToggle={handleToggle}/>
-      <div className={styles.background}>
-        <div className={styles.hamburgerWrapper}>
-          <Image
-            src="/hamburger_icon.svg"
-            width={45}
-            height={45}
-            alt="Menu Button"
-            className={styles.hamburger}
-            onClick={handleToggle}
-          />
-        </div>
-        <h1>{getTitle()}</h1>
-        <span className={styles.span}></span>
+    <div className="flex flex-col min-h-screen items-center lg:flex-row lg:items-start">
+      <SideNav />
+      <div className="w-full flex flex-col items-center justify-center lg:items-start">
+        <h1 className="text-white font-bold text-[24px] mt-6 lg:text-4xl lg:ml-12 lg:mt-10">Dashboard</h1>
+        <div style={{height: '0.25px'}} className="bg-custom-gray mt-4 w-[85%] md:w-[90%] lg:hidden"></div>
+        <main className="w-full flex flex-col items-center justify-center lg:mt-8">
+            {children}
+        </main>
       </div>
-      {children}
-    </>
+    </div>
   )
 }
