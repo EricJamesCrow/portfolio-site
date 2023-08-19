@@ -1,5 +1,6 @@
 import localFont from 'next/font/local'
 import Button from '@/components/admin/button'
+import Link from 'next/link'
 
 import { GoHome } from 'react-icons/go'
 import { FaGithub } from 'react-icons/fa';
@@ -19,14 +20,18 @@ const SideNav: React.FC = () => {
                 <div>
                     <h2 className="ml-3">MAIN MENU</h2>
                     <div className="mt-3">
-                        <Button
-                        text={'Dashboard'}
-                        IconComponent={GoHome}
-                        />
-                        <Button
-                        text={'Projects'}
-                        IconComponent={FaGithub}
-                        />
+                        <Link href="/admin" aria-label="Dashboard">
+                            <Button
+                            text={'Dashboard'}
+                            IconComponent={GoHome}
+                            />
+                        </Link>
+                        <Link href="/admin/projects" aria-label="Projects">
+                            <Button
+                            text={'Projects'}
+                            IconComponent={FaGithub}
+                            />
+                        </Link>
                     </div>
                 </div>
                 <div className="mt-20">
@@ -55,7 +60,6 @@ const SideNav: React.FC = () => {
                     text={'Logout'}
                     IconComponent={MdOutlineLogout}
                     />
-
                 </div>
             </div>
         </div>

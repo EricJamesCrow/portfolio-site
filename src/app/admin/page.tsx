@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import Card from '@/components/admin/card';
 import { FaGithub } from 'react-icons/fa';
@@ -9,10 +10,10 @@ import { FiGlobe } from 'react-icons/fi';
 const Dashboard: React.FC = () => {
     return (
       <>
-        <div className="w-[85%] md:w-[90%] mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto">
-            <Card text={'Projects'} IconComponent={FaGithub} />
-            <Card text={'Projects 2'} IconComponent={FaGithub} />
-            <Card text={'Projects 3'} IconComponent={FaGithub} />
+        <div className="w-[85%] md:w-[90%] mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto lg:mt-8">
+            <Link href="/admin/projects" aria-label="Projects">
+              <Card text={'Projects'} IconComponent={FaGithub} />
+            </Link>
         </div>
 
         <div className="mt-10 w-full flex flex-col items-center justify-center lg:items-start">

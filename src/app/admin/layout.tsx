@@ -10,7 +10,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <div className="w-full flex flex-col items-center justify-center lg:items-start">
         <h1 className="text-white font-bold text-[24px] mt-6 lg:text-4xl lg:ml-12 lg:mt-10">Dashboard</h1>
         <div style={{height: '0.25px'}} className="bg-custom-gray mt-4 w-[85%] md:w-[90%] lg:hidden"></div>
-        <main className="w-full flex flex-col items-center justify-center lg:mt-8">
+        <main className="w-full flex flex-col items-center justify-center">
             {children}
         </main>
       </div>
