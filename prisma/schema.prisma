@@ -28,3 +28,26 @@ enum UserRole {
   USER
   ADMIN
 }
+
+model Project {
+  id Int @id @default(autoincrement())
+  name String @unique 
+  description String
+  type String 
+  tech String[] 
+  status String
+  image String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum ProjectType {
+  PERSONAL
+  WORK
+}
+
+enum ProjectStatus {
+  IN_PROGRESS
+  COMPLETED
+  ON_HOLD
+}
