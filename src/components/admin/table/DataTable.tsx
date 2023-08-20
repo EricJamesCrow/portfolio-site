@@ -96,9 +96,6 @@ export default function DataTable() {
   const [selectedKeys, setSelectedKeys] = useState(new Set([""]));
   const rows: Row[] = useSelector((state: any) => state.projects.projects)
   if (!rows) return null;
-  console.log(rows)
-
-
 
   return (
     <Table 

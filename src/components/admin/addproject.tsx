@@ -14,14 +14,14 @@ interface AddProjectProps {
 const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
     const { addProject } = useProjects();
     const { toast } = useToast();
-    const [name, setName] = useState('');
-    const [status, setStatus] = useState('');
-    const [description, setDescription] = useState('');
-    const [url, setUrl] = useState('');
+    const [name, setName] = useState<string>('');
+    const [status, setStatus] = useState<string>('');
+    const [description, setDescription] = useState<string>('');
+    const [url, setUrl] = useState<string>('');
     const [tech, setTech] = useState([]);
-    const [type, setType] = useState('');
+    const [type, setType] = useState<string>('');
     const [imagePreview, setImagePreview] = useState<string | null>(null);
-
+    const [image, setImage] = useState<File | null>(null);
 
     const [selectedKeys, setSelectedKeys] = useState(new Set([]));
 
@@ -37,6 +37,7 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
     const handleImageSelect = (files: File[]) => {
         if (files.length === 0) return;
         const file = files[0];  // get the first file
+        setImage(file);
         const previewURL = URL.createObjectURL(file);
         setImagePreview(previewURL);
     };
@@ -53,9 +54,34 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
             })
             return;
         }
+
+        let uploadedImageUrl = null;
+
+        if(image) {
+            const formData = new FormData();
+            formData.append('image', image);
+
+            const res = await fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            })
+
+            if(res.ok) {
+                const data = await res.json();
+                uploadedImageUrl = data;
+            } else {
+                toast({
+                    variant: "destructive",
+                    title: 'Error',
+                    description: 'Error uploading image.',
+                })
+                return;
+            }
+        
+        }
         
         try {
-            const res = await addProject(name, status, description, url, tech, type);
+            const res = await addProject(name, status, description, url, tech, type, uploadedImageUrl);
     
             if(res) {
                 setName('');
