@@ -1,6 +1,6 @@
 import {Modal, ModalContent, ModalHeader, ModalBody, Input, Textarea, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@nextui-org/react";
 import ImageDropzone from "../ImageDropzone";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // hooks
 import { useProjects } from '@/hooks/useProjects'
@@ -20,8 +20,27 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
     const [url, setUrl] = useState('');
     const [tech, setTech] = useState([]);
     const [type, setType] = useState('');
+    const [imagePreview, setImagePreview] = useState<string | null>(null);
+
 
     const [selectedKeys, setSelectedKeys] = useState(new Set([]));
+
+    useEffect(() => {
+        return () => {
+            if (imagePreview) {
+                URL.revokeObjectURL(imagePreview);
+            }
+        };
+    }, [imagePreview]);
+    
+
+    const handleImageSelect = (files: File[]) => {
+        if (files.length === 0) return;
+        const file = files[0];  // get the first file
+        const previewURL = URL.createObjectURL(file);
+        setImagePreview(previewURL);
+    };
+    
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -174,7 +193,8 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
                             </div>
                             <div className="flex-1 flex flex-col font-semibold px-5 mt-4 gap-2">
                                 <label>Image</label>
-                                <ImageDropzone onDrop={() => {}} />
+                                {imagePreview && <img src={imagePreview} alt="Selected Preview" style={{ width: '100%', height: 'auto', maxHeight: '200px' }} />}
+                                <ImageDropzone onDrop={handleImageSelect} />
                             </div>
                         </div>
                         <div className="font-semibold text-sm flex gap-4 justify-center mt-[42px]">
