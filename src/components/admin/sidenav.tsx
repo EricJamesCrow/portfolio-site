@@ -1,6 +1,7 @@
 import localFont from 'next/font/local'
 import Button from '@/components/admin/button'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import { GoHome } from 'react-icons/go'
 import { FaGithub } from 'react-icons/fa';
@@ -13,6 +14,8 @@ import { MdOutlineLogout } from 'react-icons/md';
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' })
 
 const SideNav: React.FC = () => {
+    const pathname = usePathname();
+
     return (
         <div className="hidden lg:block w-72 bg-[#262626] h-screen pl-4 relative">
             <h1 className={`${railwayThin.className} text-white font-thin text-[36px] leading-tight my-4`}>Crow Development</h1>
@@ -24,12 +27,14 @@ const SideNav: React.FC = () => {
                             <Button
                             text={'Dashboard'}
                             IconComponent={GoHome}
+                            isActive={pathname === '/admin'}
                             />
                         </Link>
                         <Link href="/admin/projects" aria-label="Projects">
                             <Button
                             text={'Projects'}
                             IconComponent={FaGithub}
+                            isActive={pathname === '/admin/projects'}
                             />
                         </Link>
                     </div>

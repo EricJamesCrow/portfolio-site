@@ -1,6 +1,8 @@
 "use client";
 import React, { ReactNode } from 'react';
 import { SessionProvider } from 'next-auth/react';
+import { Provider } from 'react-redux';
+import { store } from '@/redux/store';
 import dynamic from 'next/dynamic';
 
 // import {NextUIProvider} from "@nextui-org/system";
@@ -15,9 +17,11 @@ interface Props {
 const Providers = ({ children }: Props) => {
     return (
         <NextUIProvider>
-            <SessionProvider>
-                {children}
-            </SessionProvider>
+            <Provider store={store}>
+                <SessionProvider>
+                    {children}
+                </SessionProvider>
+            </Provider>
         </NextUIProvider>
     );
 }

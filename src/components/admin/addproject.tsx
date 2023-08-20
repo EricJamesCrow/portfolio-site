@@ -157,7 +157,7 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
                             </div>
                         </div>
                         <div className="font-semibold text-sm flex gap-4 justify-center mt-[42px]">
-                            <button onClick={onClose} className="w-[121px] h-[38px] rounded-md border border-black bg-white text-black hover:bg-gray-200 hover:bg-gray-300 transition-all duration-200">Cancel</button>
+                            <button type="button" onClick={onClose} className="w-[121px] h-[38px] rounded-md border border-black bg-white text-black hover:bg-gray-200 hover:bg-gray-300 transition-all duration-200">Cancel</button>
                             <button type="submit" className="w-[121px] h-[38px] rounded-md bg-[#4CAF50] hover:bg-[#388E3C] transition-all duration-200">Save Changes</button>
                         </div>
                     </div>

@@ -4,8 +4,12 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuIt
   NavbarMenuToggle, Link } from "@nextui-org/react";
 import Image from "next/image.js";
 
+// hooks
+import { useFetchProjects } from '@/hooks/useFetchProjects'
+
 const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const fetchProjects = useFetchProjects();
 
   const handleMenuOpenChange = (isOpen: boolean | undefined) => {
     if (isOpen !== undefined) {
@@ -19,6 +23,8 @@ const NavBar: React.FC = () => {
     "Services",
     "Request a quote"
   ];
+
+  fetchProjects();
 
   return (
     <Navbar

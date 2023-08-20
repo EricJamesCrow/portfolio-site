@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import projectReducer from "./slices/projectSlice";
 
 export const store = configureStore({
-    reducer: {},
+    reducer: {
+        projects: projectReducer,
+    },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
