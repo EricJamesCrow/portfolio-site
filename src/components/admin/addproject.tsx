@@ -1,6 +1,10 @@
 import {Modal, ModalContent, ModalHeader, ModalBody, Input, Textarea, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@nextui-org/react";
 import ImageDropzone from "../ImageDropzone";
-import { useMemo, useState } from "react";
+import { useState } from "react";
+
+// hooks
+import { useProjects } from '@/hooks/useProjects'
+import { useToast } from "@/components/ui/use-toast"
 
 interface AddProjectProps {
     isOpen: boolean;
@@ -8,6 +12,8 @@ interface AddProjectProps {
 }
 
 const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
+    const { addProject } = useProjects();
+    const { toast } = useToast();
     const [name, setName] = useState('');
     const [status, setStatus] = useState('');
     const [description, setDescription] = useState('');
@@ -17,32 +23,47 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
 
     const [selectedKeys, setSelectedKeys] = useState(new Set([]));
 
-    const selectedValue = useMemo(
-      () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
-      [selectedKeys]
-    );
-
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const res = await fetch('/api/project', {
-            method: "POST",
-            body: JSON.stringify({
-              name,
-              status,
-              description,
-              url,
-              tech,
-              type
-            }),
-            headers: { "Content-Type": "application/json" }
-          })
-
-        if (res.ok) {
-            console.log("Project added!");
-        } else {
-            const data = await res.json();
-            console.log("Error adding project:", data);
+        if (!name || !status || !description || !url || !tech || !type) {
+            toast({
+                variant: "destructive",
+                title: 'Error',
+                description: 'Please fill out all fields.',
+            })
+            return;
+        }
+        
+        try {
+            const res = await addProject(name, status, description, url, tech, type);
+    
+            if(res) {
+                setName('');
+                setStatus('');
+                setDescription('');
+                setUrl('');
+                setTech([]);
+                setType('');
+                toast({
+                    title: 'Success',
+                    description: `Project ${res.name} added successfully!`,
+                })
+            } else {
+                toast({
+                    variant: "destructive",
+                    title: 'Error',
+                    description: 'Error adding project.',
+                })
+            }
+    
+        } catch (error) {
+            console.log("Error adding project:", error);
+            toast({
+                variant: "destructive",
+                title: 'Error',
+                description: 'Error adding project.',
+            })
         }
     }
 

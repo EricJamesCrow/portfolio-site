@@ -17,6 +17,7 @@
     "@nextui-org/react": "^2.0.1",
     "@prisma/client": "^5.1.1",
     "@radix-ui/react-select": "^1.2.2",
+    "@radix-ui/react-toast": "^1.1.4",
     "@react-three/drei": "^9.80.1",
     "@react-three/fiber": "^8.13.6",
     "@reduxjs/toolkit": "^1.9.5",

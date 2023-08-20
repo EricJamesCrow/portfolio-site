@@ -5,11 +5,11 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuIt
 import Image from "next/image.js";
 
 // hooks
-import { useFetchProjects } from '@/hooks/useFetchProjects'
+import { useProjects } from '@/hooks/useProjects'
 
 const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const fetchProjects = useFetchProjects();
+  const { fetchProjects } = useProjects();
 
   const handleMenuOpenChange = (isOpen: boolean | undefined) => {
     if (isOpen !== undefined) {

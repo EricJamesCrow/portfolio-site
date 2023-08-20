@@ -2,6 +2,9 @@ import './globals.css'
 import Providers from '@/components/Providers'
 import { Inter } from 'next/font/google'
 
+// shadcn
+import { Toaster } from "@/components/ui/toaster"
+
 // components
 import NavBar from '@/components/layout/navbar'
 
@@ -30,6 +33,7 @@ export default function RootLayout({
           <Providers>
             <NavBar />
             {children}
+            <Toaster />
           </Providers>
         </body>
     </html>

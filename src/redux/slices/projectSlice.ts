@@ -9,12 +9,12 @@ reducers: {
     setProjects: (state, action) => {
         state.projects = action.payload;
     },
-    addProject: (state, action) => {
+    updateProjects: (state, action) => {
         [action.payload, ...state.projects];
     },
 },
 });
 
-export const { setProjects, addProject } = projectSlice.actions;
+export const { setProjects, updateProjects } = projectSlice.actions;
 
 export default projectSlice.reducer;
