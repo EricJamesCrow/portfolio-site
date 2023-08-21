@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     return new Response(JSON.stringify(project));
 }
 
-export async function GET(request: Request) {
+export async function GET() {
     const projects = await prisma.project.findMany();
 
     return new Response(JSON.stringify(projects));

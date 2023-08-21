@@ -1,14 +1,16 @@
+const UPLOAD_URL = '/api/upload';
+
 export const useUpload = () => {
     
     const uploadImage = async (file: File) => {
         const filename = file.name;
         const fileType = file.type;
         
-        const res = await fetch('/api/upload', {
+        const res = await fetch(UPLOAD_URL, {
             method: 'POST',
             body: JSON.stringify({ file: filename, fileType: fileType }),
         })
-        
+
         if (!res.ok) {
             console.error('Presigned post data request failed')
             return null

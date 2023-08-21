@@ -1,7 +1,7 @@
 // components/ImageDropzone.tsx
 
 import React, { useCallback } from 'react';
-import { useDropzone, DropzoneState, DropzoneOptions, DropEvent } from 'react-dropzone';
+import { useDropzone, DropzoneState, DropEvent } from 'react-dropzone';
 
 interface ImageDropzoneProps {
   onDrop: (acceptedFiles: File[], fileRejections: DropzoneState['fileRejections'], event: DropEvent) => void;
