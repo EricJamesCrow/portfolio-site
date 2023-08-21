@@ -14,7 +14,7 @@ export const useProjects = () => {
         dispatch(setProjects(null));
     };
 
-    const addProject = async (name: string, status: string, description: string, url: string, tech: string[], type: string, image? : string | null) => {
+    const addProject = async (name: string, status: string, description: string, url: string, tech: string[], type: string, image : string | null) => {
         const res = await fetch('/api/project', {
             method: "POST",
             body: JSON.stringify({

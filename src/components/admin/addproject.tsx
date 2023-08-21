@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 // hooks
 import { useProjects } from '@/hooks/useProjects'
+import { useUpload } from '@/hooks/useUpload'
 import { useToast } from "@/components/ui/use-toast"
 
 interface AddProjectProps {
@@ -13,6 +14,7 @@ interface AddProjectProps {
 
 const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
     const { addProject } = useProjects();
+    const { uploadImage } = useUpload();
     const { toast } = useToast();
     const [name, setName] = useState<string>('');
     const [status, setStatus] = useState<string>('');
@@ -58,18 +60,10 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
         let uploadedImageUrl = null;
 
         if(image) {
-            const formData = new FormData();
-            formData.append('image', image);
-
-            const res = await fetch('/api/upload', {
-                method: 'POST',
-                body: formData
-            })
-
-            if(res.ok) {
-                const data = await res.json();
-                uploadedImageUrl = data;
-            } else {
+            try {
+                uploadedImageUrl = await uploadImage(image);
+            } catch (error) {
+                console.log("Error uploading image:", error);
                 toast({
                     variant: "destructive",
                     title: 'Error',
@@ -77,7 +71,6 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
                 })
                 return;
             }
-        
         }
         
         try {
