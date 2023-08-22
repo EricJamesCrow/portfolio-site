@@ -49,13 +49,13 @@ export async function PATCH(request: Request) {
 
     const data: Partial<UpdateRequestBody> = {};
 
-    if (body.name !== undefined) data.name = body.name;
-    if (body.description !== undefined) data.description = body.description;
-    if (body.url !== undefined) data.url = body.url;
-    if (body.type !== undefined) data.type = body.type;
+    if (body.name !== "") data.name = body.name;
+    if (body.description !== "") data.description = body.description;
+    if (body.url !== "") data.url = body.url;
+    if (body.type !== "") data.type = body.type;
     if (body.tech !== undefined) data.tech = body.tech;
-    if (body.status !== undefined) data.status = body.status;
-    if (body.image !== undefined) data.image = body.image;
+    if (body.status !== "") data.status = body.status;
+    if (body.image !== "") data.image = body.image;
 
     const updatedProject = await prisma.project.update({
         where: { id: body.id },
