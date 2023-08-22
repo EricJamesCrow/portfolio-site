@@ -5,7 +5,12 @@ import { useEffect, useState } from "react";
 // hooks
 import { useProjects } from '@/hooks/useProjects'
 import { useUpload } from '@/hooks/useUpload'
+
+// shadcan
 import { useToast } from "@/components/ui/use-toast"
+
+// button loader
+import { Loader2 } from "lucide-react"
 
 interface AddProjectProps {
     isOpen: boolean;
@@ -16,6 +21,7 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
     const { addProject } = useProjects();
     const { uploadImage } = useUpload();
     const { toast } = useToast();
+    const [loading, setLoading] = useState<boolean>(false);
     const [name, setName] = useState<string>('');
     const [status, setStatus] = useState<string>('');
     const [description, setDescription] = useState<string>('');
@@ -47,13 +53,14 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+        setLoading(true);
         if (!name || !status || !description || !url || !tech || !type) {
             toast({
                 variant: "destructive",
                 title: 'Error',
                 description: 'Please fill out all fields.',
             })
+            setLoading(false);
             return;
         }
 
@@ -69,13 +76,13 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
                     title: 'Error',
                     description: 'Error uploading image.',
                 })
+                setLoading(false);
                 return;
             }
         }
-        
+
         try {
             const res = await addProject(name, status, description, url, tech, type, uploadedImageUrl);
-    
             if(res) {
                 setName('');
                 setStatus('');
@@ -103,6 +110,7 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
                 description: 'Error adding project.',
             })
         }
+        return setLoading(false);
     }
 
     return (
@@ -218,7 +226,9 @@ const AddProject: React.FC<AddProjectProps> = ({ isOpen, onOpenChange }) => {
                         </div>
                         <div className="font-semibold text-sm flex gap-4 justify-center mt-[42px]">
                             <button type="button" onClick={onClose} className="w-[121px] h-[38px] rounded-md border border-black bg-white text-black hover:bg-gray-200 hover:bg-gray-300 transition-all duration-200">Cancel</button>
-                            <button type="submit" className="w-[121px] h-[38px] rounded-md bg-[#4CAF50] hover:bg-[#388E3C] transition-all duration-200">Save Changes</button>
+                            <button type="submit" disabled={loading} className={`w-[121px] h-[38px] rounded-md ${loading ? `bg-[#388E3C]` : `bg-[#4CAF50] hover:bg-[#388E3C]`} transition-all duration-200 flex justify-center items-center`}>
+                                {loading ? <Loader2 className="h-6 w-6 animate-spin" /> : 'Save Changes'}
+                                </button>
                         </div>
                     </div>
             </form>

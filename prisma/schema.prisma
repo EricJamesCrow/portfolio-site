@@ -33,6 +33,7 @@ model Project {
   id Int @id @default(autoincrement())
   name String @unique 
   description String
+  url String?
   type String 
   tech String[] 
   status String

@@ -1,14 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Selection as ReactSelection } from "@react-types/shared";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/react";
-//redux
-import { useSelector } from 'react-redux'
 
 interface Row {
     id: string;
     name: string;
     description?: string;
+    url?: string;
     type: string;
     tech: string[];
     status: string;
@@ -16,53 +15,7 @@ interface Row {
     updatedAt: string;
     createdAt?: string;
     }
-
-    // const rows: Row[] = [
-    //   {
-    //     id: '1',
-    //     name: 'Project Alpha',
-    //     description: 'A platform for managing tasks efficiently.',
-    //     type: 'Web App',
-    //     tech: ['React', 'Node.js', 'MongoDB'],
-    //     status: 'In-Progress',
-    //     image: 'https://example.com/image1.jpg',
-    //     updatedAt: '2023-08-17',
-    //     createdAt: '2023-01-01'
-    //   },
-    //   {
-    //     id: '2',
-    //     name: 'Project Beta',
-    //     description: 'A mobile application for e-commerce.',
-    //     type: 'Mobile App',
-    //     tech: ['Flutter', 'Firebase'],
-    //     status: 'Completed',
-    //     image: 'https://example.com/image2.jpg',
-    //     updatedAt: '2023-07-15',
-    //     createdAt: '2023-02-10'
-    //   },
-    //   {
-    //     id: '3',
-    //     name: 'Project Gamma',
-    //     type: 'Desktop App',
-    //     tech: ['Electron', 'TypeScript'],
-    //     status: 'In-Progress',
-    //     updatedAt: '2023-08-05',
-    //     createdAt: '2023-03-20'
-    //   },
-    //   {
-    //     id: '4',
-    //     name: 'Project Delta',
-    //     description: 'A platform for real-time collaboration.',
-    //     type: 'Web App',
-    //     tech: ['Vue.js', 'Express', 'PostgreSQL'],
-    //     status: 'In-Review',
-    //     image: 'https://example.com/image3.jpg',
-    //     updatedAt: '2023-06-30',
-    //     createdAt: '2023-04-15'
-    //   }
-    // ];
     
-
 interface Column {
     key: string;
     label: string;
@@ -92,26 +45,36 @@ const columns: Column[] = [
   },
 ];
 
-export default function DataTable() {
-  const [selectedKeys, setSelectedKeys] = useState(new Set([""]));
-  const rows: Row[] = useSelector((state: any) => state.projects.projects)
-  if (!rows) return null;
+interface DataTableProps {
+    projects: Row[];
+    setSelectedProject: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const DataTable: React.FC<DataTableProps> = ({ projects, setSelectedProject }) => {
+  
+  useEffect(() => {
+    console.log(projects);
+  }, [projects])
 
   return (
     <Table 
       aria-label="Projects Data Table"
-      selectionMode="multiple"
-      selectedKeys={selectedKeys}
-      onSelectionChange={(keys: ReactSelection) => {
-        const stringKeys = Array.from(keys).map(String);
-        setSelectedKeys(new Set(stringKeys));
+      selectionMode="single" 
+      onSelectionChange={(key: ReactSelection) => {
+        const keyArray = Array.from(key as Set<string>);
+        if (keyArray.length > 0) {
+            setSelectedProject(keyArray[0]);
+        } else {
+            setSelectedProject("");
+        }
     }}
+    
     
     >
       <TableHeader columns={columns}>
         {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
       </TableHeader>
-      <TableBody items={rows} emptyContent={"No rows to display."}>
+      <TableBody items={projects} emptyContent={"No rows to display."}>
         {(item) => (
           <TableRow key={item.id}>
               {(columnKey) => (
@@ -134,3 +97,5 @@ export default function DataTable() {
     </Table>
   );
 }
+
+export default DataTable;
