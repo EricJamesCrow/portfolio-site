@@ -82,6 +82,8 @@ const EditProject: React.FC<Props> = ({ projects, selectedProject }) => {
             setCurrentProject(undefined);
         }
     }, [selectedProject, projects]);
+
+    if (!currentProject) return null;
     
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
