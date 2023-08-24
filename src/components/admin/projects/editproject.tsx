@@ -48,7 +48,23 @@ const EditProject: React.FC<Props> = ({ projects, selectedProject }) => {
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const [imageURL, setImageURL] = useState<string | undefined>(undefined);  // for editing existing image
     const [image, setImage] = useState<File | null>(null);
-    const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+    const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set()); 
+    const [hasChanged, setHasChanged] = useState<boolean>(false);
+    
+    
+    useEffect(() => {
+        const hasChanged = () => {
+            if(name !== undefined && name !== "" && name !== currentProject?.name) return true;
+            if(status !== undefined && status !== "" && status !== currentProject?.status) return true;
+            if(description !== undefined && description !== "" && description !== currentProject?.description) return true;
+            if(url !== undefined && url !== "" && url !== currentProject?.url) return true;
+            if(tech !== undefined && tech !== currentProject?.tech) return true;
+            if(type !== undefined && type !== "" && type !== currentProject?.type) return true;
+            if(image !== null) return true;
+            return false;
+        }
+        setHasChanged(hasChanged());
+    }, [name, status, description, url, tech, type, image]);
 
     useEffect(() => {
         return () => {
@@ -110,7 +126,6 @@ const EditProject: React.FC<Props> = ({ projects, selectedProject }) => {
         try {
             return await uploadImage(image);
         } catch (error) {
-            console.error("Error uploading image:", error);
             showDestructiveToast('Error uploading image.');
             return null;
         }
@@ -119,7 +134,7 @@ const EditProject: React.FC<Props> = ({ projects, selectedProject }) => {
     const handleProjectUpdate = async (uploadedImageUrl: string | undefined) => {
         try {
             const res = await updateProject(id, name, status, description, url, tech, type, uploadedImageUrl);
-            if (res) {
+            if (typeof res == 'object') {
                 showSuccessToast(`Project ${res.name} updated successfully.`);
                 // only clear name, desc, url as the other fields still need the same values
                 setName('');
@@ -129,7 +144,6 @@ const EditProject: React.FC<Props> = ({ projects, selectedProject }) => {
                 showDestructiveToast(res);
             }
         } catch (error) {
-            console.error("Error updating project:", error);
             showDestructiveToast('Error updating project.');
         }
     };
@@ -202,7 +216,7 @@ const EditProject: React.FC<Props> = ({ projects, selectedProject }) => {
                         />
                 </div>
                 <div className="font-semibold text-sm flex gap-4 justify-center mt-[42px]">
-                <SaveButton loading={loading} />
+                <SaveButton loading={loading} disabled={!hasChanged}/>
                 </div>
             </div>
     </form>

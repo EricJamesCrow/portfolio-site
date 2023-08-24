@@ -51,28 +51,37 @@ interface UpdateRequestBody {
 }
 
 export async function PATCH(request: Request) {
-    const body: UpdateRequestBody = await request.json();
+    try {
+        const body: UpdateRequestBody = await request.json();
 
-    if (!body.id) {
-        return new Response('Project ID is required', { status: 400 }); // Bad Request
+        if (!body.id) {
+            return new Response('Project ID is required', { status: 400 }); // Bad Request
+        }
+    
+        const data: Partial<UpdateRequestBody> = {};
+    
+        if (body.name !== "") data.name = body.name;
+        if (body.description !== "") data.description = body.description;
+        if (body.url !== "") data.url = body.url;
+        if (body.type !== "") data.type = body.type;
+        if (body.tech !== undefined) data.tech = body.tech;
+        if (body.status !== "") data.status = body.status;
+        if (body.image !== "") data.image = body.image;
+    
+        const updatedProject = await prisma.project.update({
+            where: { id: body.id },
+            data: data
+        });
+    
+        return new Response(JSON.stringify(updatedProject));
+    } catch (error) {
+        return new Response(JSON.stringify({ error: error }), {
+            status: 500,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
     }
-
-    const data: Partial<UpdateRequestBody> = {};
-
-    if (body.name !== "") data.name = body.name;
-    if (body.description !== "") data.description = body.description;
-    if (body.url !== "") data.url = body.url;
-    if (body.type !== "") data.type = body.type;
-    if (body.tech !== undefined) data.tech = body.tech;
-    if (body.status !== "") data.status = body.status;
-    if (body.image !== "") data.image = body.image;
-
-    const updatedProject = await prisma.project.update({
-        where: { id: body.id },
-        data: data
-    });
-
-    return new Response(JSON.stringify(updatedProject));
 }
 
 

@@ -38,8 +38,22 @@ const AddProject: React.FC<Props> = ({ isOpen, onOpenChange }) => {
     const [type, setType] = useState<string>('');
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const [image, setImage] = useState<File | null>(null);
-
     const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+    const [hasChanged, setHasChanged] = useState<boolean>(false);
+
+    useEffect(() => {
+        const hasChanged = () => {
+            if (name !== "") return true;
+            if (status !== "") return true;
+            if (description !== "") return true;
+            if (url !== "") return true;
+            if (tech.length > 0) return true;
+            if (type !== "") return true;
+            if (imagePreview !== null) return true;
+            return false;
+        }
+        setHasChanged(hasChanged());
+    }, [name, status, description, url, tech, type, imagePreview, image])
 
     useEffect(() => {
         return () => {
@@ -181,7 +195,7 @@ const AddProject: React.FC<Props> = ({ isOpen, onOpenChange }) => {
                             className="w-[121px] h-[38px] rounded-md border border-black bg-white text-black hover:bg-gray-200 hover:bg-gray-300 transition-all duration-200"
                             >Cancel
                             </button>
-                            <SaveButton loading={loading} />
+                            <SaveButton loading={loading} disabled={!hasChanged}/>
                         </div>
                     </div>
             </form>
