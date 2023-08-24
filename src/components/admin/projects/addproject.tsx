@@ -111,7 +111,7 @@ const AddProject: React.FC<Props> = ({ isOpen, onOpenChange }) => {
             }
     
         } catch (error) {
-            showDestructiveToast(`Error adding project: ${error}}`);
+            showDestructiveToast(`Error adding project: ${error}`);
         }
     }
 
