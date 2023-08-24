@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { Selection as ReactSelection } from "@react-types/shared";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/react";
 
@@ -51,11 +51,6 @@ interface DataTableProps {
 }
 
 const DataTable: React.FC<DataTableProps> = ({ projects, setSelectedProject }) => {
-  
-  useEffect(() => {
-    console.log(projects);
-  }, [projects])
-
   return (
     <Table 
       aria-label="Projects Data Table"
@@ -78,11 +73,11 @@ const DataTable: React.FC<DataTableProps> = ({ projects, setSelectedProject }) =
         {(item) => (
           <TableRow key={item.id}>
               {(columnKey) => (
-                <TableCell>
+                <TableCell className="text-left">
                   {(() => {
                       if (columnKey === 'tech') {
                           return item[columnKey][0];
-                      } else if (columnKey === 'updatedAt' || columnKey === 'lastUpdated') { // Assuming the actual key is 'updatedAt'
+                      } else if (columnKey === 'updatedAt' || columnKey === 'lastUpdated') {
                           const date = new Date(item['updatedAt']);
                           return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
                       } else {

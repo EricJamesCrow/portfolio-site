@@ -1,7 +1,7 @@
 "use client";
-import DataTable from "@/components/admin/table/DataTable";
-import EditProject from "@/components/admin/editproject";
-import AddProject from "@/components/admin/addproject";
+import DataTable from "@/components/admin/DataTable";
+import EditProject from "@/components/admin/projects/editproject";
+import AddProject from "@/components/admin/projects/addproject";
 import {useDisclosure} from "@nextui-org/react";
 import { useState } from "react";
 //redux

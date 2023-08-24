@@ -3,11 +3,11 @@
 import React, { useCallback } from 'react';
 import { useDropzone, DropzoneState, DropEvent } from 'react-dropzone';
 
-interface ImageDropzoneProps {
+interface Props {
   onDrop: (acceptedFiles: File[], fileRejections: DropzoneState['fileRejections'], event: DropEvent) => void;
 }
 
-const ImageDropzone: React.FC<ImageDropzoneProps> = ({ onDrop }) => {
+const ImageDropzone: React.FC<Props> = ({ onDrop }) => {
   const onDropCallback = useCallback(onDrop, []);
 
   const { getRootProps, getInputProps } = useDropzone({

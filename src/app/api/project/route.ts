@@ -12,21 +12,31 @@ interface RequestBody {
 }
 
 export async function POST(request: Request) {
-    const body:RequestBody = await request.json();
+    try {
+        const body: RequestBody = await request.json();
 
-    const project = await prisma.project.create({
-        data: {
-            name: body.name,
-            description: body.description,
-            url: body.url ? body.url : null,
-            type: body.type,
-            tech: body.tech,
-            status: body.status,
-            image: body.image ? body.image : null,
-        }
-    });
-    
-    return new Response(JSON.stringify(project));
+        const project = await prisma.project.create({
+            data: {
+                name: body.name,
+                description: body.description,
+                url: body.url ? body.url : null,
+                type: body.type,
+                tech: body.tech,
+                status: body.status,
+                image: body.image ? body.image : null,
+            }
+        });
+
+        return new Response(JSON.stringify(project));
+
+    } catch (error) {
+        return new Response(JSON.stringify({ error: error }), {
+            status: 500,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+    }
 }
 
 interface UpdateRequestBody {

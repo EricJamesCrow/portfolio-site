@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { setProjects, updateSingleProject, updateProjects } from "../redux/slices/projectSlice";
+import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 
 const PROJECTS_URL = "/api/project";
 
@@ -14,27 +15,43 @@ export const useProjects = () => {
         return null;
     };
 
-    const addProject = async (name: string, status: string, description: string, url: string, tech: string[], type: string, image : string | null) => {
-        const res = await fetch(PROJECTS_URL, {
-            method: "POST",
-            body: JSON.stringify({
-              name,
-              status,
-              description,
-              url,
-              tech,
-              type,
-              image
-            }),
-            headers: { "Content-Type": "application/json" }
-          })
-        const newProject = await res.json();
-        if (res.ok) {
-            dispatch(updateProjects(newProject));
-            return newProject;
-        } else { 
-            return null;
-        };
+    const addProject = async (
+        name: string, 
+        status: string, 
+        description: string, 
+        url: string, 
+        tech: string[], 
+        type: string, 
+        image : string | undefined
+        ) => {
+            try {
+                const res = await fetch(PROJECTS_URL, {
+                    method: "POST",
+                    body: JSON.stringify({
+                    name,
+                    status,
+                    description,
+                    url,
+                    tech,
+                    type,
+                    image
+                    }),
+                    headers: { "Content-Type": "application/json" }
+                })
+                const newProject = await res.json();
+                if (res.ok) {
+                    dispatch(updateProjects(newProject));
+                    return newProject;
+                } else { 
+                    if(newProject.error.name === "PrismaClientKnownRequestError") {
+                        let error = capitalizeFirstLetter(newProject.error.meta.target[0]);
+                        return `${error} already in use.`
+                    }
+                    return 'Error adding project!';
+                };
+            } catch (error) {
+                return 'Internal server error.';
+            }
     }
 
     const updateProject = async (
@@ -57,20 +74,29 @@ export const useProjects = () => {
         if (type !== '') requestBody.type = type;
         if (image !== undefined) requestBody.image = image;
     
-        const res = await fetch(PROJECTS_URL, {
-            method: "PATCH",
-            body: JSON.stringify(requestBody),
-            headers: { "Content-Type": "application/json" }
-        });
-        
-        const updatedProject = await res.json();
-        if (res.ok) {
-            dispatch(updateSingleProject(updatedProject));
-            return updatedProject;
-        } else { 
-            return null;
-        };
-    }
+        try {
+            const res = await fetch(PROJECTS_URL, {
+                method: "PATCH",
+                body: JSON.stringify(requestBody),
+                headers: { "Content-Type": "application/json" }
+            });
+            
+            const updatedProject = await res.json();
+            if (res.ok) {
+                dispatch(updateSingleProject(updatedProject));
+                return updatedProject;
+            } else { 
+                if(updatedProject.error.name === "PrismaClientKnownRequestError") {
+                    let error = capitalizeFirstLetter(updatedProject.error.meta.target[0]);
+                    return `${error} already in use.`
+                }
+                return 'Internal server error.';
+            };
+        } catch (error) {
+            return 'Internal server error.';
+        }
+    };
+    
     
     
     return { fetchProjects, addProject, updateProject };
