@@ -33,6 +33,7 @@ const Card: React.FC<Props> = ({ image, name, description, tech, url }) => {
                         if (tech.includes(t.name.toLowerCase())) {
                             return (
                                 <Image
+                                key={t.id}
                                 className="lg:w-8 lg:h-8"
                                 width={25}
                                 height={25}

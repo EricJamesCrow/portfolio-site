@@ -32,7 +32,7 @@ const Portfolio: React.FC = () => {
             <div className="grid grid-cols-1 gap-10 dark text-foreground bg-[#161616] m-4 md:m-8">
                 {projects.map((project: any) => (
                     <Card 
-                    key={project.id || project.name} 
+                    key={project.id} 
                     image={project.image} 
                     name={project.name} 
                     description={project.description}

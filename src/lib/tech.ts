@@ -9,6 +9,8 @@ import JavaScript from '../../public/javascript.svg';
 import ExpressJS from '../../public/expressjs.svg';
 import NodeJS from '../../public/nodejs.svg';
 import MongoDB from '../../public/mongodb.svg';
+import Python from '../../public/python.svg';
+import Qt from '../../public/qt.svg';
 
 
 export const technologies = [
@@ -61,5 +63,15 @@ export const technologies = [
         id: 10,
         name: 'MongoDB',
         image: MongoDB,
+    },
+    {
+        id: 11,
+        name: 'Python',
+        image: Python,
+    },
+    {
+        id: 12,
+        name: 'Qt',
+        image: Qt,
     },
 ]
