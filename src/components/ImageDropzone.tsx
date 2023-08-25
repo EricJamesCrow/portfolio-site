@@ -1,5 +1,3 @@
-// components/ImageDropzone.tsx
-
 import React, { useCallback } from 'react';
 import { useDropzone, DropzoneState, DropEvent } from 'react-dropzone';
 
@@ -8,7 +6,7 @@ interface Props {
 }
 
 const ImageDropzone: React.FC<Props> = ({ onDrop }) => {
-  const onDropCallback = useCallback(onDrop, []);
+  const onDropCallback = useCallback(onDrop, [onDrop]);
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: onDropCallback,

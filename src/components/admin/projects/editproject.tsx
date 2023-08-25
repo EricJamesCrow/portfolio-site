@@ -64,7 +64,7 @@ const EditProject: React.FC<Props> = ({ projects, selectedProject }) => {
             return false;
         }
         setHasChanged(hasChanged());
-    }, [name, status, description, url, tech, type, image]);
+    }, [name, status, description, url, tech, type, image, currentProject?.name, currentProject?.status, currentProject?.description, currentProject?.url, currentProject?.tech, currentProject?.type]);
 
     useEffect(() => {
         return () => {
