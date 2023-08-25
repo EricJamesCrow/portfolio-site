@@ -48,6 +48,8 @@ const Tech: React.FC<Props> = ({ selectedKeys, setSelectedKeys, setTech, loading
                     <DropdownItem key="redux">Redux</DropdownItem>
                     <DropdownItem key="nextjs">Next.js</DropdownItem>
                     <DropdownItem key="vercel">Vercel</DropdownItem>
+                    <DropdownItem key="qt">Qt</DropdownItem>
+                    <DropdownItem key="python">Python</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
     </div>

@@ -15,7 +15,7 @@ const Portfolio: React.FC = () => {
     const [selectedButton, setSelectedButton] = useState<string>('Work');
 
     return (
-        <div className="bg-custom-color h-[90vh]">
+        <div className="bg-custom-color min-h-[90vh]">
             <h1 className={`${railwayThin.className} mt-4 text-center font-thin text-white text-5xl lg:text-left lg:ml-10 lg:text-7xl`}>Portfolio</h1>
             <div className="mt-2 text-white font-light text-2xl flex justify-center lg:justify-start lg:ml-8">
                 <button 
@@ -29,7 +29,7 @@ const Portfolio: React.FC = () => {
                     Personal
                 </button>
             </div>
-            <div className="grid grid-cols-1 gap-4 dark text-foreground bg-[#161616] m-4 md:m-8">
+            <div className="grid grid-cols-1 gap-10 dark text-foreground bg-[#161616] m-4 md:m-8">
                 {projects.map((project: any) => (
                     <Card 
                     key={project.id || project.name} 
