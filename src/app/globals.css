@@ -8,9 +8,7 @@ body {
   margin: 0;
   font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  overflow-anchor: none;
   box-sizing: border-box;
-  overflow-x: hidden;
   background: #161616;
 }
 

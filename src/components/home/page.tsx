@@ -8,7 +8,7 @@ import Testimonials from "@/components/home/testimonials";
 
 const HomePage: NextPage = () =>  {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Head>
         <title></title>
         <meta name="description" content="" />
@@ -21,7 +21,7 @@ const HomePage: NextPage = () =>  {
         <Tools/>
         <Testimonials/>
         <div className="relative bg-custom-color min-h-[264px] p-12 font-light flex justify-between"></div>
-    </>
+    </div>
   );
 }
 

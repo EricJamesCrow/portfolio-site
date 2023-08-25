@@ -79,7 +79,7 @@ const NavBar: React.FC = () => {
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               className="w-full text-white font-light"
-              href="#"
+              href={`/${item.toLowerCase()}`}
               size="lg"
             >
               {item}
