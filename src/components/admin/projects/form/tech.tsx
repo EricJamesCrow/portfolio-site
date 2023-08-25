@@ -42,11 +42,12 @@ const Tech: React.FC<Props> = ({ selectedKeys, setSelectedKeys, setTech, loading
                 >
                     <DropdownItem key="react">React</DropdownItem>
                     <DropdownItem key="nodejs">Node.js</DropdownItem>
+                    <DropdownItem key="express">Express.js</DropdownItem>
+                    <DropdownItem key="mongodb">MongoDB</DropdownItem>
                     <DropdownItem key="aws">AWS</DropdownItem>
                     <DropdownItem key="redux">Redux</DropdownItem>
                     <DropdownItem key="nextjs">Next.js</DropdownItem>
                     <DropdownItem key="vercel">Vercel</DropdownItem>
-                    <DropdownItem key="express">Express.js</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
     </div>

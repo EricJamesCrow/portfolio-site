@@ -53,22 +53,22 @@ const NavBar: React.FC = () => {
 
       <NavbarContent className="hidden sm:show sm:flex gap-4 font-light" justify="end">
         <NavbarItem>
-          <Link  href="#" className="text-white">
+          <Link  href="/about" className="text-white">
             About
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" className="text-white">
+          <Link href="/portfolio" className="text-white">
             Portfolio
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link  href="#" className="text-white">
+          <Link  href="/services" className="text-white">
             Services
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" className="text-white">
+          <Link href="/quote" className="text-white">
             Request a quote
           </Link>
         </NavbarItem>
