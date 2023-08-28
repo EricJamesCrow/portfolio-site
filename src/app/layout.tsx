@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster"
 
 // components
 import NavBar from '@/components/layout/navbar'
+import Footer from '@/components/layout/footer'
 
 const inter = Inter({
   weight: ['300', '400', '500', '700'],
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Providers>
             <NavBar />
             {children}
+            <Footer />
             <Toaster />
           </Providers>
         </body>
