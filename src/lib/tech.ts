@@ -1,16 +1,16 @@
 // images
-import React from '../../public/react.svg';
-import Redux from '../../public/redux.svg';
-import Next from '../../public/nextjs.svg';
-import AWS from '../../public/aws.svg';
-import Vercel from '../../public/vercel.svg';
-import TypeScript from '../../public/typescript.svg';
-import JavaScript from '../../public/javascript.svg';
-import ExpressJS from '../../public/expressjs.svg';
-import NodeJS from '../../public/nodejs.svg';
-import MongoDB from '../../public/mongodb.svg';
-import Python from '../../public/python.svg';
-import Qt from '../../public/qt.svg';
+import React from '@/public/react.svg';
+import Redux from '@/public/redux.svg';
+import Next from '@/public/nextjs.svg';
+import AWS from '@/public/aws.svg';
+import Vercel from '@/public/vercel.svg';
+import TypeScript from '@/public/typescript.svg';
+import JavaScript from '@/public/javascript.svg';
+import ExpressJS from '@/public/expressjs.svg';
+import NodeJS from '@/public/nodejs.svg';
+import MongoDB from '@/public/mongodb.svg';
+import Python from '@/public/python.svg';
+import Qt from '@/public/qt.svg';
 
 
 export const technologies = [

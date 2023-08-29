@@ -68,7 +68,7 @@ const NavBar: React.FC = () => {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/quote" className="text-white">
+          <Link href="/contact" className="text-white">
             Request a quote
           </Link>
         </NavbarItem>
@@ -79,7 +79,7 @@ const NavBar: React.FC = () => {
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               className="w-full text-white font-light"
-              href={`/${item.toLowerCase()}`}
+              href={`/${item === "Request a quote" ? 'contact' : item.toLowerCase()}`}
               size="lg"
             >
               {item}
