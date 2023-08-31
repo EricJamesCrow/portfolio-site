@@ -21,7 +21,7 @@ const NavBar: React.FC = () => {
     "About",
     "Portfolio",
     "Services",
-    "Request a quote"
+    "Contact"
   ];
 
   fetchProjects();
@@ -69,7 +69,7 @@ const NavBar: React.FC = () => {
         </NavbarItem>
         <NavbarItem>
           <Link href="/contact" className="text-white">
-            Request a quote
+            Contact
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -79,7 +79,7 @@ const NavBar: React.FC = () => {
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               className="w-full text-white font-light"
-              href={`/${item === "Request a quote" ? 'contact' : item.toLowerCase()}`}
+              href={`/${item.toLowerCase()}`}
               size="lg"
             >
               {item}
