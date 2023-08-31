@@ -4,6 +4,8 @@ import {Textarea} from "@nextui-org/react";
 import localFont from 'next/font/local';
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
 
+// hooks
+
 const Contact: React.FC = () => {
     return (
         <div className="pb-12 min-h-[70vh] dark text-foreground">
@@ -20,9 +22,9 @@ const Contact: React.FC = () => {
                 <Input isRequired type="subject" label="Subject" variant="underlined" placeholder="Enter your subject" />
                 <Textarea
                 isRequired
-                label="Description"
+                label="Message"
                 variant="underlined"
-                placeholder="Enter your description"
+                placeholder="Enter your message"
                 />
                 <button type="submit" className="bg-white text-black font-semibold text-sm h-9 rounded mt-2 hover:bg-gray-300 transition-all duration-200 w-full max-w-[320px]">Send Email</button>
             </form>
