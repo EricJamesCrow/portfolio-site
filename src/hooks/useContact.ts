@@ -1,6 +1,6 @@
 export const useContact = () => {
 
-    const sendEmail = async (name: string, email: string, subject: string, message: string) => {
+    const contact = async (name: string, email: string, subject: string, message: string) => {
         const res = await fetch('/api/send', {
             method: 'POST',
             body: JSON.stringify({ name, email, subject, message }),
@@ -15,5 +15,5 @@ export const useContact = () => {
         return data
     }
 
-    return { sendEmail };
+    return { contact };
 };
