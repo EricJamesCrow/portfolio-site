@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
     }
 
     return (
-        <div className="pb-12 min-h-[70vh] dark text-foreground">
+        <div className="pb-11 min-h-[68vh] dark text-foreground">
             <h1 className={`${railwayThin.className} mt-8 text-center font-thin text-white text-5xl lg:text-left lg:ml-20 lg:text-7xl`}>Contact</h1>
             <form onSubmit={handleSubmit} className="mx-auto m-4 px-10 flex flex-col gap-4 text-white max-w-[700px] items-center lg:mt-8">
                 <Input 
