@@ -4,6 +4,8 @@ import React, { useRef, useState } from "react";
 // styles
 import styles from "./signup.module.css";
 
+// delete this page
+
 const SignUpPage = () => {  
     const email = useRef("");
     const userName = useRef("");
