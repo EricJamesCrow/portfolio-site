@@ -2,6 +2,7 @@ import localFont from 'next/font/local'
 import Button from '@/components/admin/button'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { signOut } from "next-auth/react";
 
 import { GoHome } from 'react-icons/go'
 import { FaGithub } from 'react-icons/fa';
@@ -63,6 +64,7 @@ const SideNav: React.FC = () => {
                     />
                     <Button
                     text={'Logout'}
+                    onClick={() => signOut()}
                     IconComponent={MdOutlineLogout}
                     />
                 </div>
