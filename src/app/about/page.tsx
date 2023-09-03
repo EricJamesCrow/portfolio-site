@@ -6,7 +6,7 @@ const About: React.FC = () => {
     return (
         <div className="pb-12 min-h-[70vh] dark text-foreground">
             <h1 className={`${railwayThin.className} mt-8 text-center font-thin text-white text-5xl lg:text-left lg:ml-20 lg:text-7xl`}>About</h1>
-            <div className="text-white font-light flex flex-col sm:m-12 mt-12 lg:mx-20">
+            <div className="text-white font-light flex flex-col sm:m-12 mt-12 xl:mx-20">
                 <div className='xl:flex'>
                     <Image
                         src="/EricCrow.png"
@@ -26,6 +26,39 @@ const About: React.FC = () => {
                             <p className="font-semibold lg:text-xl">Bachelor of Science in Computer Science</p>
                             <p className="italic lg:text-xl">Expected Graduation: November 2023</p>
                         </div>
+                    </div>
+                </div>
+                <div className="m-4 xl:mt-20">
+                    <h2 className="font-thin text-2xl mb-2 lg:text-3xl lg:mb-4l">Skills</h2>
+                    <div className="mt-6 lg:mt-12 grid grid-cols-1 grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-20 items-center">
+                        <Image
+                            src="/CompTIA_A_plus.png"
+                            alt="CompTIA A+ Certification"
+                            width={200}
+                            height={200}
+                            className="lg:w-[250px] lg:h-[250px] mx-auto"
+                        />
+                        <Image
+                            src="/CompTIA_Network_plus.png"
+                            alt="CompTIA Network+ Certification"
+                            width={200}
+                            height={200}
+                            className="lg:w-[250px] lg:h-[250px] mx-auto"
+                        />
+                        <Image
+                            src="/CompTIA_Cert_Badges_Specialist.png"
+                            alt="CompTIA CIOS Certification"
+                            width={200}
+                            height={200}
+                            className="lg:w-[250px] lg:h-[250px] mx-auto"
+                        />
+                        <Image
+                            src="/ITILv4.png"
+                            alt="ITILv4 Certification"
+                            width={200}
+                            height={200}
+                            className="lg:w-[250px] lg:h-[250px] mx-auto"
+                        />
                     </div>
                 </div>
                 <div className="m-4 xl:mt-20">
