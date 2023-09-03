@@ -3,11 +3,13 @@ import React from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, 
   NavbarMenuToggle, Link } from "@nextui-org/react";
 import Image from "next/image.js";
+import { useSession } from "next-auth/react";
 
 // hooks
 import { useProjects } from '@/hooks/useProjects'
 
 const NavBar: React.FC = () => {
+  const { data: session } = useSession();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { fetchProjects } = useProjects();
 
@@ -17,13 +19,17 @@ const NavBar: React.FC = () => {
     }
   };
 
-  const menuItems = [
+  let menuItems = [
     "Home",
     "About",
     "Services",
     "Portfolio",
     "Contact"
   ];
+
+  if (session?.user.role === 'ADMIN') {
+    menuItems = ["Admin", ...menuItems];
+  }
 
   fetchProjects();
 
@@ -58,6 +64,11 @@ const NavBar: React.FC = () => {
             Home
           </Link>
         </NavbarItem>
+        {session?.user.role === 'ADMIN' && <NavbarItem>
+          <Link  href="/admin" className="text-white">
+            Admin
+          </Link>
+        </NavbarItem>}
         <NavbarItem>
           <Link  href="/about" className="text-white">
             About
