@@ -34,6 +34,7 @@ const LoginPage = ({searchParams}: IProps) => {
             redirect: false
         });
         if(result?.error) {
+            console.log(result)
             setError(result.error)
         } else {
             router.push('/admin');
