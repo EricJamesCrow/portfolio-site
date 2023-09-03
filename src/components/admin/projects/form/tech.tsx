@@ -50,6 +50,8 @@ const Tech: React.FC<Props> = ({ selectedKeys, setSelectedKeys, setTech, loading
                     <DropdownItem key="vercel">Vercel</DropdownItem>
                     <DropdownItem key="qt">Qt</DropdownItem>
                     <DropdownItem key="python">Python</DropdownItem>
+                    <DropdownItem key="electron">Electron</DropdownItem>
+                    <DropdownItem key="django">Django</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
     </div>

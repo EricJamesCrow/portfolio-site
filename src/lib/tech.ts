@@ -11,6 +11,8 @@ import NodeJS from '@/public/nodejs.svg';
 import MongoDB from '@/public/mongodb.svg';
 import Python from '@/public/python.svg';
 import Qt from '@/public/qt.svg';
+import Electron from '@/public/electron.svg';
+import Django from '@/public/django.svg';
 
 
 export const technologies = [
@@ -74,4 +76,14 @@ export const technologies = [
         name: 'Qt',
         image: Qt,
     },
+    {
+        id: 13,
+        name: 'Electron',
+        image: Electron,
+    },
+    {
+        id: 14,
+        name: 'Django',
+        image: Django,
+    }
 ]
