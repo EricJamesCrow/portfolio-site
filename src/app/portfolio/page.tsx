@@ -18,8 +18,8 @@ const Portfolio: React.FC = () => {
 
     return (
         <div className="bg-custom-color pb-12 min-h-[91.9vh]">
-            <h1 className={`${railwayThin.className} mt-4 text-center font-thin text-white text-5xl lg:text-left lg:ml-10 lg:text-7xl`}>Portfolio</h1>
-            <div className="mt-2 text-white font-light text-2xl flex justify-center lg:justify-start lg:ml-8">
+            <h1 className={`${railwayThin.className} mt-8 text-center font-thin text-white text-5xl lg:text-left lg:ml-20 lg:text-7xl`}>Portfolio</h1>
+            <div className="mt-6 text-white font-light text-2xl flex justify-center lg:justify-start lg:ml-20">
                 <button 
                     className={`transition duration-300 ease-in-out bg-custom-color ${selectedButton === 'Work' ? 'border-b-2 border-white' : 'hover:bg-custom-dark text-[#9D9C9C]'} py-2 px-4 w-[128.65px]`} 
                     onClick={() => setSelectedButton('Work')}>
@@ -31,7 +31,7 @@ const Portfolio: React.FC = () => {
                     Personal
                 </button>
             </div>
-            <div className="grid grid-cols-1 gap-10 dark text-foreground bg-[#161616] m-4 md:m-8">
+            <div className="grid grid-cols-1 gap-10 dark text-foreground bg-[#161616] m-4 md:m-8 lg:mx-20">
                 {filteredProjects.map((project: any) => (
                     <Card 
                     key={project.id} 
