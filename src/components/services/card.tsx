@@ -31,15 +31,15 @@ const Card: React.FC<Props> = ({ title, description, left, image}) => {
                 className={`lg:w-52 lg:h-52 ${title === 'Hosting' ? 'lg:w-[208px] lg:h-[120.89px]' : null}`}
                 />
             <div className="text-white lg:ml-4">
-                <h2 className='font-semibold text-2xl mb-1 lg:text-3xl'>{title}</h2>
-                <p className="lg:text-xl lg:mt-4">{description}</p>
+                <h2 className='font-thin text-2xl mb-1 lg:text-3xl'>{title}</h2>
+                <p className="font-light lg:text-xl lg:mt-4">{description}</p>
             </div>
             </>}
             {!left &&
             <>
             <div className="text-white lg:mr-4">
-                <h2 className='font-semibold text-2xl mb-1 lg:text-3xl'>{title}</h2>
-                <p className="lg:text-xl lg:mt-4">{description}</p>
+                <h2 className='font-thin text-2xl mb-1 lg:text-3xl'>{title}</h2>
+                <p className="font-light lg:text-xl lg:mt-4">{description}</p>
                 </div>
             <Image
                 src={image}
