@@ -18,7 +18,7 @@ const About: React.FC = () => {
                     <div className="m-4 mt-8 xl:mt-0 xl:mx-20">
                         <div>
                             <h2 className="font-thin text-2xl mb-2 lg:text-3xl lg:mb-4">About Me</h2>
-                            <p className="lg:text-xl">My name is Eric Crow and I'm a Computer Science student at Western Governors University, set to graduate this fall. Over my academic journey, I have developed a strong interest in web development, particularly with React. This has led to hands-on projects, including a full-stack web application for Mantra Seeds. Such experiences have significantly improved my skills in React. As I approach graduation, I'm not only looking forward to a professional web development role but also actively offering services for freelance web projects, keen to help businesses establish a robust online presence.</p>
+                            <p className="lg:text-xl">My name is Eric Crow and I&apos;m a Computer Science student at Western Governors University, set to graduate this fall. Over my academic journey, I have developed a strong interest in web development, particularly with React. This has led to hands-on projects, including a full-stack web application for Mantra Seeds. Such experiences have significantly improved my skills in React. As I approach graduation, I&apos;m not only looking forward to a professional web development role but also actively offering services for freelance web projects, keen to help businesses establish a robust online presence.</p>
                         </div>
                         <div className="mt-8">
                             <h2 className="font-thin text-2xl mb-2 lg:text-3xl lg:mb-4">Education</h2>
