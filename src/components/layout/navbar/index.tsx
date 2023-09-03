@@ -18,9 +18,10 @@ const NavBar: React.FC = () => {
   };
 
   const menuItems = [
+    "Home",
     "About",
-    "Portfolio",
     "Services",
+    "Portfolio",
     "Contact"
   ];
 
@@ -52,19 +53,24 @@ const NavBar: React.FC = () => {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:show sm:flex gap-4 font-light" justify="end">
+      <NavbarItem>
+          <Link  href="/" className="text-white">
+            Home
+          </Link>
+        </NavbarItem>
         <NavbarItem>
           <Link  href="/about" className="text-white">
             About
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/portfolio" className="text-white">
-            Portfolio
+          <Link  href="/services" className="text-white">
+            Services
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link  href="/services" className="text-white">
-            Services
+          <Link href="/portfolio" className="text-white">
+            Portfolio
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -79,7 +85,7 @@ const NavBar: React.FC = () => {
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               className="w-full text-white font-light"
-              href={`/${item.toLowerCase()}`}
+              href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
               size="lg"
             >
               {item}
