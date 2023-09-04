@@ -40,18 +40,21 @@ const Tech: React.FC<Props> = ({ selectedKeys, setSelectedKeys, setTech, loading
                     setTech(Array.from(keys));
                 }}
                 >
-                    <DropdownItem key="react">React</DropdownItem>
-                    <DropdownItem key="nodejs">Node.js</DropdownItem>
-                    <DropdownItem key="express">Express.js</DropdownItem>
-                    <DropdownItem key="mongodb">MongoDB</DropdownItem>
-                    <DropdownItem key="aws">AWS</DropdownItem>
-                    <DropdownItem key="redux">Redux</DropdownItem>
-                    <DropdownItem key="nextjs">Next.js</DropdownItem>
-                    <DropdownItem key="vercel">Vercel</DropdownItem>
-                    <DropdownItem key="qt">Qt</DropdownItem>
-                    <DropdownItem key="python">Python</DropdownItem>
-                    <DropdownItem key="electron">Electron</DropdownItem>
-                    <DropdownItem key="django">Django</DropdownItem>
+                    <DropdownItem key="React">React</DropdownItem>
+                    <DropdownItem key="NodeJS">Node.js</DropdownItem>
+                    <DropdownItem key="Express">Express.js</DropdownItem>
+                    <DropdownItem key="MongoDB">MongoDB</DropdownItem>
+                    <DropdownItem key="AWS">AWS</DropdownItem>
+                    <DropdownItem key="Redux">Redux</DropdownItem>
+                    <DropdownItem key="NextJS">Next.js</DropdownItem>
+                    <DropdownItem key="Vercel">Vercel</DropdownItem>
+                    <DropdownItem key="QT">Qt</DropdownItem>
+                    <DropdownItem key="Python">Python</DropdownItem>
+                    <DropdownItem key="Electron">Electron</DropdownItem>
+                    <DropdownItem key="Django">Django</DropdownItem>
+                    <DropdownItem key="C++">C++</DropdownItem>
+                    <DropdownItem key="Java">Java</DropdownItem>
+                    <DropdownItem key="MySQL">MySQL</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
     </div>

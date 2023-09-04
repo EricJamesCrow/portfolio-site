@@ -30,7 +30,7 @@ const Card: React.FC<Props> = ({ image, name, description, tech, url }) => {
                 <p className="mt-2 text-sm font-light xl:text-lg">{description}</p>
                 <div className="flex flex-wrap gap-4 my-4">
                     {technologies.map((t) => {
-                        if (tech.includes(t.name.toLowerCase())) {
+                        if (tech.map(t => t.toLowerCase()).includes(t.name.toLowerCase())) {
                             return (
                                 <Image
                                 key={t.id}

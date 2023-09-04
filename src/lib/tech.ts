@@ -13,6 +13,9 @@ import Python from '@/public/python.svg';
 import Qt from '@/public/qt.svg';
 import Electron from '@/public/electron.svg';
 import Django from '@/public/django.svg';
+import Cplusplus from '@/public/c++.svg';
+import Java from '@/public/java.svg';
+import MySQL from '@/public/mysql.svg';
 
 
 export const technologies = [
@@ -85,5 +88,20 @@ export const technologies = [
         id: 14,
         name: 'Django',
         image: Django,
-    }
+    },
+    {
+        id: 15,
+        name: 'C++',
+        image: Cplusplus,
+    },
+    {
+        id: 16,
+        name: 'Java',
+        image: Java,
+    },
+    {
+        id: 17,
+        name: 'MySQL',
+        image: MySQL,
+    },
 ]

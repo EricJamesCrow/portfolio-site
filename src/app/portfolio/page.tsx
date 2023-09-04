@@ -16,6 +16,8 @@ const Portfolio: React.FC = () => {
 
     const filteredProjects = projects.filter((project: any) => project.type === selectedButton);
 
+    const sortedProjects = filteredProjects.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+
     return (
         <div className="bg-custom-color pb-12 min-h-[91.9vh]">
             <h1 className={`${railwayThin.className} mt-8 text-center font-thin text-white text-5xl lg:text-left lg:ml-20 lg:text-7xl`}>Portfolio</h1>
@@ -28,11 +30,11 @@ const Portfolio: React.FC = () => {
                 <button 
                     className={`transition duration-300 ease-in-out bg-custom-color ${selectedButton === 'Personal' ? 'border-b-2 border-white' : 'hover:bg-custom-dark text-[#9D9C9C]'} py-2 px-4`} 
                     onClick={() => setSelectedButton('Personal')}>
-                    Personal
+                    Projects
                 </button>
             </div>
             <div className="grid grid-cols-1 gap-10 dark text-foreground bg-[#161616] m-4 md:m-8 lg:mx-20">
-                {filteredProjects.map((project: any) => (
+                {sortedProjects.map((project: any) => (
                     <Card 
                     key={project.id} 
                     image={project.image} 
