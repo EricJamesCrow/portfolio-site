@@ -17,14 +17,14 @@ const ImageComponent: React.FC<Props> = ({ imageURL, imagePreview, onImageSelect
                     src={imageURL} 
                     alt="Selected Preview" 
                     layout="fill"
-                    objectFit="contain"
+                    objectFit="cover"
                 />}
                 {imagePreview && 
                 <Image 
                     src={imagePreview} 
                     alt="Selected Preview" 
                     layout="fill"
-                    objectFit="contain"
+                    objectFit="cover"
                 />}
             </div>}
             <ImageDropzone onDrop={onImageSelect} />
