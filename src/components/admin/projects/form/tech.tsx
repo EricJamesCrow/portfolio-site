@@ -55,6 +55,9 @@ const Tech: React.FC<Props> = ({ selectedKeys, setSelectedKeys, setTech, loading
                     <DropdownItem key="C++">C++</DropdownItem>
                     <DropdownItem key="Java">Java</DropdownItem>
                     <DropdownItem key="MySQL">MySQL</DropdownItem>
+                    <DropdownItem key="Postgres">Postgres</DropdownItem>
+                    <DropdownItem key="Prisma">Prisma</DropdownItem>
+                    <DropdownItem key="TailwindCSS">TailwindCSS</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
     </div>
