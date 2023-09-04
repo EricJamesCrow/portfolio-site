@@ -21,6 +21,8 @@ const Description: React.FC<Props> = ({
         <div className="font-semibold flex flex-col gap-1">
             <label>{label}</label>
             <Textarea 
+                minRows={4}
+                maxRows={4}
                 isDisabled={loading}
                 value={value} 
                 onChange={(e) => setDescription(e.target.value)}
