@@ -54,3 +54,35 @@ export const technologies = [
     { id: 15, name: 'C++', image: Cplusplus },
     { id: 16, name: 'Java', image: Java },
 ];
+
+
+export const topTechnologies = [
+    // Frontend Technologies
+    { id: 1, name: 'React', image: React },
+    { id: 2, name: 'Redux', image: Redux },
+    { id: 3, name: 'NextJS', image: Next },
+    { id: 18, name: 'TailwindCSS', image: TailwindCSS },
+
+    // Backend Technologies
+    { id: 9, name: 'NodeJS', image: NodeJS },
+    { id: 8, name: 'Express', image: ExpressJS },
+
+    // Databases
+    { id: 10, name: 'MongoDB', image: MongoDB },
+    { id: 17, name: 'MySQL', image: MySQL },
+    { id: 20, name: 'Postgres', image: Postgres },
+
+    // Deployment & Hosting
+    { id: 4, name: 'AWS', image: AWS },
+    { id: 5, name: 'Vercel', image: Vercel },
+
+    // Other Frameworks & Libraries
+    { id: 13, name: 'Electron', image: Electron },
+    { id: 12, name: 'Qt', image: Qt },
+
+    // Core Languages
+    { id: 6, name: 'TypeScript', image: TypeScript },
+    { id: 11, name: 'Python', image: Python },
+    { id: 16, name: 'Java', image: Java },
+    
+];

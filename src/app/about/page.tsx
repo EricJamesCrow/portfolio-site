@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import localFont from 'next/font/local';
-import { technologies } from '@/lib/tech';
+import { topTechnologies as technologies } from '@/lib/tech';
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
 
 const About: React.FC = () => {
@@ -31,12 +31,12 @@ const About: React.FC = () => {
                 </div>
                 <div className="m-4 xl:mt-20">
                     <h2 className="font-thin text-2xl mb-2 lg:text-3xl lg:mb-4l">Skills</h2>
-                    <div className="mt-6 lg:mt-12 grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 items-center gap-12 md:gap-20">
+                    <div className="mt-6 lg:mt-12 grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 xl:grid-cols-8 items-center gap-12 md:gap-20">
                         {technologies.map((tech) => (
                                 <div key={tech.id} className="mx-auto">
                                     <Image 
-                                    width={125}
-                                    height={125}
+                                    width={100}
+                                    height={100}
                                     src={tech.image} 
                                     alt={tech.name} />
                                 </div>

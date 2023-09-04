@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import { technologies } from '@/lib/tech';
+import { topTechnologies as technologies } from '@/lib/tech';
 
 const autoplayOptions = {
     delay: 2000,
