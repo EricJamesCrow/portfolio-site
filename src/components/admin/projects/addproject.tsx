@@ -119,9 +119,13 @@ const AddProject: React.FC<Props> = ({ isOpen, onOpenChange }) => {
         e.preventDefault();
         setLoading(true);
         if (!name || !status || !description || !url || !tech || !type) {
-            showDestructiveToast('Please fill out all fields.');
             setLoading(false);
-            return;
+            if(!name) return showDestructiveToast('Please enter a name.');
+            if(!status) return showDestructiveToast('Please select a status.');
+            if(!description) return showDestructiveToast('Please enter a description.');
+            if(!url) return showDestructiveToast('Please enter a url.');
+            if(!tech) return showDestructiveToast('Please select a tech.');
+            if(!type) return showDestructiveToast('Please select a type.');
         }
 
         const uploadedImageUrl = await handleImageUpload();
