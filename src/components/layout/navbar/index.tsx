@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { usePathname } from 'next/navigation'
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, 
   NavbarMenuToggle, Link } from "@nextui-org/react";
 import Image from "next/image.js";
@@ -9,6 +10,7 @@ import { useSession } from "next-auth/react";
 import { useProjects } from '@/hooks/useProjects'
 
 const NavBar: React.FC = () => {
+  const pathname = usePathname();
   const { data: session } = useSession();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { fetchProjects } = useProjects();
@@ -28,7 +30,11 @@ const NavBar: React.FC = () => {
   ];
 
   if (session?.user.role === 'ADMIN') {
-    menuItems = ["Admin", ...menuItems];
+    if(pathname.startsWith('/admin')) {
+      menuItems = ["Dashboard", "Projects", ...menuItems];
+    } else {
+      menuItems = ["Admin", ...menuItems];
+    }
   }
 
   fetchProjects();
@@ -95,8 +101,13 @@ const NavBar: React.FC = () => {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              className="w-full text-white font-light"
-              href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+              className={`w-full text-white font-light ${item === "Dashboard" ? "text-blue-500" : item === "Projects" ? "text-blue-500" : item === "Admin" ? "text-blue-500" : ""}`}
+              href={
+                item === "Home" ? "/" : 
+                item === "Dashboard" ? "/admin" : 
+                item === "Projects" ? "/admin/projects" : 
+                `/${item.toLowerCase()}`
+              }
               size="lg"
             >
               {item}
