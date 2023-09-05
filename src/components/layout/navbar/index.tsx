@@ -65,16 +65,16 @@ const NavBar: React.FC = () => {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:show sm:flex gap-4 font-light" justify="end">
+      {session?.user.role === 'ADMIN' && <NavbarItem>
+          <Link  href="/admin" className="text-blue-500">
+            Admin
+          </Link>
+        </NavbarItem>}
       <NavbarItem>
           <Link  href="/" className="text-white">
             Home
           </Link>
         </NavbarItem>
-        {session?.user.role === 'ADMIN' && <NavbarItem>
-          <Link  href="/admin" className="text-white">
-            Admin
-          </Link>
-        </NavbarItem>}
         <NavbarItem>
           <Link  href="/about" className="text-white">
             About
