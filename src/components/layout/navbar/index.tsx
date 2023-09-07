@@ -102,6 +102,7 @@ const NavBar: React.FC = () => {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
+              onClick={() => setIsMenuOpen(false)}
               as={NextLink}
               className={`w-full text-white font-light ${item === "Dashboard" ? "text-blue-500" : item === "Projects" ? "text-blue-500" : item === "Admin" ? "text-blue-500" : ""}`}
               href={
