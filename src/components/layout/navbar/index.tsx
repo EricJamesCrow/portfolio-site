@@ -3,6 +3,7 @@ import React from "react";
 import { usePathname } from 'next/navigation'
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, 
   NavbarMenuToggle, Link } from "@nextui-org/react";
+import NextLink from "next/link";
 import Image from "next/image.js";
 import { useSession } from "next-auth/react";
 
@@ -66,32 +67,32 @@ const NavBar: React.FC = () => {
 
       <NavbarContent className="hidden sm:show sm:flex gap-4 font-light" justify="end">
       {session?.user.role === 'ADMIN' && <NavbarItem>
-          <Link  href="/admin" className="text-blue-500">
+          <Link as={NextLink} href="/admin" className="text-blue-500">
             Admin
           </Link>
         </NavbarItem>}
       <NavbarItem>
-          <Link  href="/" className="text-white">
+          <Link as={NextLink} href="/" className="text-white">
             Home
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link  href="/about" className="text-white">
+          <Link as={NextLink} href="/about" className="text-white">
             About
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link  href="/services" className="text-white">
+          <Link as={NextLink} href="/services" className="text-white">
             Services
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/portfolio" className="text-white">
+          <Link as={NextLink} href="/portfolio" className="text-white">
             Portfolio
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/contact" className="text-white">
+          <Link as={NextLink} href="/contact" className="text-white">
             Contact
           </Link>
         </NavbarItem>
@@ -101,6 +102,7 @@ const NavBar: React.FC = () => {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
+              as={NextLink}
               className={`w-full text-white font-light ${item === "Dashboard" ? "text-blue-500" : item === "Projects" ? "text-blue-500" : item === "Admin" ? "text-blue-500" : ""}`}
               href={
                 item === "Home" ? "/" : 
