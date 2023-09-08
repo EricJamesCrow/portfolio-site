@@ -1,4 +1,5 @@
 "use client";
+import { type NextPage } from "next";
 import DataTable from "@/components/admin/DataTable";
 import EditProject from "@/components/admin/projects/editproject";
 import AddProject from "@/components/admin/projects/addproject";
@@ -7,7 +8,7 @@ import { useState } from "react";
 //redux
 import { useSelector } from 'react-redux'
 
-const Projects: React.FC = () => {
+const Projects: NextPage = () => {
     const projects = useSelector((state: any) => state.projects.projects);
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const [selectedProject, setSelectedProject] = useState<string>("");

@@ -1,3 +1,4 @@
+import { type NextPage } from "next";
 import { services } from '@/lib/services';
 import localFont from 'next/font/local';
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
@@ -6,7 +7,7 @@ const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' })
 import Card from '@/components/services/card';
 
 
-const Services: React.FC = () => {
+const Services: NextPage = () => {
     return (
         <div className="bg-custom-color pb-12 min-h-[70vh]">
             <h1 className={`${railwayThin.className} mt-8 text-center font-thin text-white text-5xl lg:text-left lg:ml-20 lg:text-7xl`}>Services</h1>

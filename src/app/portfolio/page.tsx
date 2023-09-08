@@ -1,4 +1,5 @@
 "use client";
+import { type NextPage } from "next";
 import { useState } from 'react';
 import localFont from 'next/font/local';
 
@@ -10,7 +11,7 @@ import Card from '@/components/portfolio/card'
 
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
 
-const Portfolio: React.FC = () => {
+const Portfolio: NextPage = () => {
     const projects = useSelector((state: any) => state.projects.projects);
     const [selectedButton, setSelectedButton] = useState<string>('Work');
 

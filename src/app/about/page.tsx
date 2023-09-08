@@ -1,9 +1,10 @@
+import { type NextPage } from "next";
 import Image from 'next/image';
 import localFont from 'next/font/local';
 import { topTechnologies as technologies } from '@/lib/tech';
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
 
-const About: React.FC = () => {
+const About: NextPage = () => {
     return (
         <div className="pb-12 min-h-[70vh] dark text-foreground">
             <h1 className={`${railwayThin.className} mt-8 text-center font-thin text-white text-5xl lg:text-left lg:ml-20 lg:text-7xl`}>About</h1>

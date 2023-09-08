@@ -5,6 +5,8 @@ import Ripple from "@/components/ripple";
 import Hero from "@/components/home/hero";
 import Tools from "@/components/home/tools";
 import About from "@/components/home/about";
+import Portfolio from "@/components/home/portfolio";
+import Services from "@/components/home/services";
 import Contact from "@/components/home/contact";
 
 const HomePage: NextPage = () =>  {
@@ -21,6 +23,8 @@ const HomePage: NextPage = () =>  {
         <Hero/>
         <Tools/>
         <About/>
+        <Portfolio/>
+        <Services/>
         <Contact/>
     </div>
   );

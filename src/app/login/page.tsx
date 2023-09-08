@@ -1,4 +1,5 @@
 "use client";
+import { type NextPage } from "next";
 import { signIn } from "next-auth/react";
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
@@ -7,7 +8,7 @@ interface IProps {
     searchParams?: { [key: string]: string | string[] | undefined }
 }
 
-const LoginPage = ({searchParams}: IProps) => {  
+const LoginPage: NextPage = ({searchParams}: IProps) => {  
     const router = useRouter();
     const userName = useRef("");
     const password = useRef("");

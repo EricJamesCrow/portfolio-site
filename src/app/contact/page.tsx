@@ -1,4 +1,5 @@
 "use client";
+import { type NextPage } from "next";
 import { useState } from "react";
 import {Input} from "@nextui-org/react";
 import {Textarea} from "@nextui-org/react";
@@ -12,7 +13,7 @@ import { Loader2 } from "lucide-react"
 import { useContact } from '@/hooks/useContact';
 import { useCustomToast } from "@/hooks/useCustomToast";
 
-const Contact: React.FC = () => {
+const Contact: NextPage = () => {
     const { contact } = useContact();
     const { showSuccessToast, showDestructiveToast } = useCustomToast();
     const [loading, setLoading] = useState<boolean>(false);

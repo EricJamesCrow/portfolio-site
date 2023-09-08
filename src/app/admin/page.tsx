@@ -1,4 +1,4 @@
-import React from 'react';
+import { type NextPage } from "next";
 import Link from 'next/link';
 
 import Card from '@/components/admin/card';
@@ -7,7 +7,7 @@ import { BsActivity } from 'react-icons/bs';
 import { BsFileEarmarkCode } from 'react-icons/bs';
 import { FiGlobe } from 'react-icons/fi';
 
-const Dashboard: React.FC = () => {
+const Dashboard: NextPage = () => {
     return (
       <>
         <div className="w-[85%] md:w-[90%] mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto lg:mt-8">
