@@ -5,6 +5,7 @@ import Ripple from "@/components/ripple";
 import Hero from "@/components/home/hero";
 import Tools from "@/components/home/tools";
 import About from "@/components/home/about";
+import Contact from "@/components/home/contact";
 
 const HomePage: NextPage = () =>  {
   return (
@@ -20,7 +21,7 @@ const HomePage: NextPage = () =>  {
         <Hero/>
         <Tools/>
         <About/>
-        <div className="relative bg-custom-color min-h-[264px] p-12 font-light flex justify-between"></div>
+        <Contact/>
     </div>
   );
 }
