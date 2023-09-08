@@ -27,7 +27,7 @@ const About: React.FC = () => {
                     height={200}
                     className="rounded mx-auto lg:h-[300px] lg:w-[300px] mb-6"
                     />
-                    <p className="font-light text-sm md:mx-8 lg:text-lg xl:mx-20 xl:mr-40">My name is Eric Crow and I'm a Computer Science student at Western Governors University, set to graduate this fall. Over my academic journey, I have developed a strong interest in web development, particularly with React. This has led to hands-on projects, including a full-stack web application for Mantra Seeds. Such experiences have significantly improved my skills in React. As I approach graduation, I'm not only looking forward to a professional web development role but also actively offering services for freelance web projects, keen to help businesses establish a robust online&nbsp;presence.</p>
+                    <p className="font-light text-sm md:mx-8 lg:text-lg xl:mx-20 xl:mr-40">My name is Eric Crow and I&apos;m a Computer Science student at Western Governors University, set to graduate this fall. Over my academic journey, I have developed a strong interest in web development, particularly with React. This has led to hands-on projects, including a full-stack web application for Mantra Seeds. Such experiences have significantly improved my skills in React. As I approach graduation, I&apos;m not only looking forward to a professional web development role but also actively offering services for freelance web projects, keen to help businesses establish a robust online&nbsp;presence.</p>
                 </div>
             </div>
         </div>
