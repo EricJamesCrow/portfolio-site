@@ -13,7 +13,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="flex flex-col min-h-screen items-center lg:flex-row lg:items-start">
+    <div className="flex flex-col min-h-screen items-center lg:flex-row lg:items-start max-w-[1800px] mx-auto">
       <SideNav />
       <div className="w-full flex flex-col items-center justify-center lg:items-start">
         <h1 className="text-white font-bold text-[24px] mt-6 lg:text-4xl lg:ml-12 lg:mt-10">{getTitle()}</h1>

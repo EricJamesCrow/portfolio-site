@@ -20,7 +20,7 @@ const Portfolio: NextPage = () => {
     const sortedProjects = filteredProjects.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
     return (
-        <div className="bg-custom-color pb-12 min-h-[91.9vh]">
+        <div className="bg-custom-color pb-12 min-h-[91.9vh] max-w-[1800px] mx-auto">
             <h1 className={`${railwayThin.className} mt-8 text-center font-thin text-white text-5xl lg:text-left lg:ml-20 lg:text-7xl`}>Portfolio</h1>
             <div className="mt-6 text-white font-light text-2xl flex justify-center lg:justify-start lg:ml-20">
                 <button 

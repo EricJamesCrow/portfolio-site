@@ -22,7 +22,7 @@ const images = {
 
 const Testimonials: React.FC = () => {
     return (
-        <div className="relative bg-custom-color min-h-[264px] p-12">
+        <div className="relative bg-custom-color min-h-[264px] p-12 max-w-[1800px] mx-auto">
             <motion.div 
             variants={variants}
             initial="hidden"

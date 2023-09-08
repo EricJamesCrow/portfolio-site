@@ -43,7 +43,7 @@ const LoginPage: NextPage = ({searchParams}: IProps) => {
     };
 
     return (
-        <div className="bg-custom-color min-h-[72vh] flex flex-col items-center">
+        <div className="bg-custom-color min-h-[72vh] flex flex-col items-center max-w-[1800px] mx-auto">
             <form onSubmit={onSubmit} className="mt-24 text-white font-medium text-xl w-72 flex flex-col items-center">
                 <div className="mt-6 flex flex-col w-full">
                     <label htmlFor="userName">Username</label>

@@ -5,7 +5,7 @@ const railwayThin = localFont({ src: '../../../../public/fonts/Raleway-Thin.ttf'
 
 const Hero: React.FC = () => {
     return (
-        <div className="bg-custom-color h-[90vh]">
+        <div className="bg-custom-color h-[90vh] max-w-[1800px] mx-auto">
             <div className="relative z-10 mx-8 mt-6 text-white lg:mx-20 lg:mt-6">
                 <h1 className={`${railwayThin.className} font-light text-[52px] leading-tight bg-gradient-custom lg:text-[96px]`}>
                 <span className="block lg:inline-block">Crow</span>Development
