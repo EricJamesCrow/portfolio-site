@@ -8,7 +8,7 @@ const About: React.FC = () => {
     return (
         <div className="relative bg-[#242424]">
             <div className="px-8 py-8 text-white lg:px-20">
-                <div className={`${railwayThin.className} font-light flex items-center justify-between`}>
+                <div className={`${railwayThin.className} font-light flex items-center justify-between mb-6`}>
                     <h2 className="text-3xl leading-tight bg-gradient-custom lg:text-6xl">
                     About
                     </h2>
@@ -19,7 +19,7 @@ const About: React.FC = () => {
                     Read more
                     </Link>
                 </div>
-                <div className="mt-6 lg:mt-12 flex flex-col md:flex-row">
+                <div className="lg:mt-12 flex flex-col md:flex-row">
                     <Image
                     src="/EricCrow.png"
                     alt="About"
