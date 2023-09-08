@@ -12,8 +12,8 @@ interface Props {
 
 const Card: React.FC<Props> = ({ image, name, description, tech, url }) => {
     return (
-        <div className="flex flex-col lg:flex-row items-center lg:gap-4">
-            <a href={url} target="_blank" rel="noopener noreferrer" className="mb-2 relative lg:w-[60%] block hover:opacity-80 transition-opacity duration-300">
+        <div className="flex flex-col items-center">
+            <a href={url} target="_blank" rel="noopener noreferrer" className="mb-2 relative block hover:opacity-80 transition-opacity duration-300">
                 <Image 
                     src={image as string} 
                     width={800}
@@ -25,16 +25,15 @@ const Card: React.FC<Props> = ({ image, name, description, tech, url }) => {
                     <GoLinkExternal className="text-white text-3xl" />
                 </div>
             </a>
-            <div className="lg:w-[60%] lg:px-8 max-w-[800px]">
-                <h2 className="font-light text-2xl xl:text-3xl">{name}</h2>
-                <p className="mt-2 text-sm font-light xl:text-lg">{description}</p>
-                <div className="flex flex-wrap gap-4 my-4">
+            <div className="max-w-[800px]">
+                <h2 className="font-light text-2xl">{name}</h2>
+                <p className="mt-2 text-sm font-light lg:h-[175px] xl:h-[115px] 2xl:h-[100px]">{description}</p>
+                <div className="flex flex-wrap gap-4 my-4 lg:h-[25px]">
                     {technologies.map((t) => {
                         if (tech.map(t => t.toLowerCase()).includes(t.name.toLowerCase())) {
                             return (
                                 <Image
                                 key={t.id}
-                                className="lg:w-8 lg:h-8"
                                 width={25}
                                 height={25}
                                 src={t.image}

@@ -6,7 +6,6 @@ const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' })
 // components
 import Card from '@/components/services/card';
 
-
 const Services: NextPage = () => {
     return (
         <div className="bg-custom-color pb-12 min-h-[70vh]">

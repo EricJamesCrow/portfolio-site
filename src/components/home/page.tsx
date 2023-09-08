@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+
 // components
 import Ripple from "@/components/ripple";
 import Hero from "@/components/home/hero";
