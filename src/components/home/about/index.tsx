@@ -14,15 +14,16 @@ const About: React.FC = () => {
                     </h2>
                     <Link
                     href="/about"
+                    aria-label="Read more about Eric Crow"
                     className="lg:text-2xl underline hover:text-gray-300 transition duration-75"
                     >
-                    Read more
+                    Read More
                     </Link>
                 </div>
                 <div className="lg:mt-12 flex flex-col md:flex-row">
                     <Image
                     src="/EricCrow.png"
-                    alt="About"
+                    alt="Image of Eric Crow"
                     width={200}
                     height={200}
                     className="rounded mx-auto lg:h-[300px] lg:w-[300px] mb-6"

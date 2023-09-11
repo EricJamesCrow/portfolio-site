@@ -1,4 +1,5 @@
 import './globals.css'
+import { Metadata } from 'next'
 import Providers from '@/components/Providers'
 import { Inter } from 'next/font/google'
 
@@ -16,8 +17,8 @@ const inter = Inter({
 })
 
 
-export const metadata = {
-  title: 'CrowDevelopment, LLC',
+export const metadata: Metadata = {
+  title: 'Home | CrowDevelopment, LLC',
   description: 'CrowDevelopment, LLC is a software development company based in the United States. We specialize in building web applications and websites for small businesses.',
 }
 

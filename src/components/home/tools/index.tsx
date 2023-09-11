@@ -21,7 +21,7 @@ const Tools: React.FC = () => {
                     width={125}
                     height={125}
                     src={tech.image} 
-                    alt={tech.name} />
+                    alt={`${tech.name} logo`} />
                 </div>
             ))}          
         </div>

@@ -1,10 +1,16 @@
 import { type NextPage } from "next";
+import { Metadata } from 'next'
 import { services } from '@/lib/services';
 import localFont from 'next/font/local';
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
 
 // components
 import Card from '@/components/services/card';
+
+export const metadata: Metadata = {
+    title: 'Services | CrowDevelopment, LLC',
+    description: 'Offering comprehensive web solutions: UI/UX Design, Web Development, Hosting, SEO, and Accessibility. Ensuring optimized performance, security, and user engagement for every project.',
+  }
 
 const Services: NextPage = () => {
     return (

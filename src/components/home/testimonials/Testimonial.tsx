@@ -19,7 +19,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ variants }) => {
                 <Avatar 
                 src="https://i.pravatar.cc/150?u=a042581f4e29026024d" 
                 className="w-12 h-12 lg:w-14 lg:h-14 xl:w-18 xl:h-18 rounded-full"
-                alt="Avatar"
+                alt="Avatar of customer"
                 />
                 <div>Satisfied Customer</div>
             </div>

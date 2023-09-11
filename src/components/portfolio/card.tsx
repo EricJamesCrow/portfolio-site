@@ -13,7 +13,7 @@ interface Props {
 const Card: React.FC<Props> = ({ image, name, description, tech, url }) => {
     return (
         <div className="flex flex-col lg:flex-row items-center lg:gap-4">
-            <a href={url} target="_blank" rel="noopener noreferrer" className="mb-2 relative lg:w-[60%] block hover:opacity-80 transition-opacity duration-300">
+            <a href={url} aria-label={`Open ${name} project in a new window`} target="_blank" rel="noopener noreferrer" className="mb-2 relative lg:w-[60%] block hover:opacity-80 transition-opacity duration-300">
                 <Image 
                     src={image as string} 
                     width={800}
@@ -38,7 +38,7 @@ const Card: React.FC<Props> = ({ image, name, description, tech, url }) => {
                                 width={25}
                                 height={25}
                                 src={t.image}
-                                alt={t.name}
+                                alt={`${t.name} logo`}
                                 />
                             );
                         }
@@ -48,7 +48,7 @@ const Card: React.FC<Props> = ({ image, name, description, tech, url }) => {
 
                 <div className="flex items-center mt-2">
                     <div className="flex-1 border-t-2 border-[#343434]"></div>
-                    <a href={url} target="_blank">
+                    <a href={url} target="_blank" aria-label={`Open ${name} project in a new window`}>
                         <GoLinkExternal className="mx-2 text-xl" />
                     </a>
                     <div className="flex-1 border-t-2 border-[#343434]"></div>

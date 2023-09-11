@@ -17,6 +17,7 @@ const Services: React.FC = () => {
                         </h2>
                         <Link
                         href="/services"
+                        aria-label="View All Services"
                         className="lg:text-2xl underline hover:text-gray-300 transition duration-75"
                         >
                         View All

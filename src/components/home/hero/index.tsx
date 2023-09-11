@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
                 <span className="block lg:inline-block">Crow</span>Development
                 </h1>
                 <h2 className={`text-[24px] mt-4 mb-8 font-thin lg:text-[36px]`}>Custom-built web applications for your business</h2>
-                <Link href="/contact">
+                <Link aria-label="Navigate to contact page" href="/contact">
                     <button className="h-11 
                     w-full 
                     rounded-md 

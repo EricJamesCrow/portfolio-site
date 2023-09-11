@@ -54,7 +54,7 @@ const NavBar: React.FC = () => {
         <NavbarBrand>
             <Image
             src="/crow.svg"
-            alt="crow"
+            alt="Crow Logo"
             width={30}
             height={30}
             />
@@ -67,32 +67,32 @@ const NavBar: React.FC = () => {
 
       <NavbarContent className="hidden sm:show sm:flex gap-4 font-light" justify="end">
       {session?.user.role === 'ADMIN' && <NavbarItem>
-          <Link as={NextLink} href="/admin" className="text-blue-500">
+          <Link as={NextLink} href="/admin" aria-label="Navigate to admin panel" className="text-blue-500">
             Admin
           </Link>
         </NavbarItem>}
       <NavbarItem>
-          <Link as={NextLink} href="/" className="text-white">
+          <Link as={NextLink} href="/" aria-label="Navigate to home page" className="text-white">
             Home
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link as={NextLink} href="/about" className="text-white">
+          <Link as={NextLink} href="/about" aria-label="Navigate to about page" className="text-white">
             About
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link as={NextLink} href="/services" className="text-white">
+          <Link as={NextLink} href="/services" aria-label="Navigate to services page" className="text-white">
             Services
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link as={NextLink} href="/portfolio" className="text-white">
+          <Link as={NextLink} href="/portfolio" aria-label="Navigate to portfolio page" className="text-white">
             Portfolio
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link as={NextLink} href="/contact" className="text-white">
+          <Link as={NextLink} href="/contact" aria-label="Navigate to contact page" className="text-white">
             Contact
           </Link>
         </NavbarItem>
@@ -105,6 +105,7 @@ const NavBar: React.FC = () => {
               onClick={() => setIsMenuOpen(false)}
               as={NextLink}
               className={`w-full text-white font-light ${item === "Dashboard" ? "text-blue-500" : item === "Projects" ? "text-blue-500" : item === "Admin" ? "text-blue-500" : ""}`}
+              aria-label={`Navigate to ${item} page`}
               href={
                 item === "Home" ? "/" : 
                 item === "Dashboard" ? "/admin" : 

@@ -1,9 +1,15 @@
 "use client";
 import { type NextPage } from "next";
+import { Metadata } from 'next'
 import { signIn } from "next-auth/react";
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 
+export const metadata: Metadata = {
+    title: 'Login | CrowDevelopment, LLC',
+    description: 'Login to CrowDevelopment, LLC to access your dashboard.',
+  }
+  
 interface IProps {
     searchParams?: { [key: string]: string | string[] | undefined }
 }

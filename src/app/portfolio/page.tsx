@@ -1,5 +1,6 @@
 "use client";
 import { type NextPage } from "next";
+import { Metadata } from 'next'
 import { useState } from 'react';
 import localFont from 'next/font/local';
 
@@ -10,6 +11,11 @@ import { useSelector } from 'react-redux'
 import Card from '@/components/portfolio/card'
 
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
+
+export const metadata: Metadata = {
+    title: 'Portfolio | CrowDevelopment, LLC',
+    description: 'Portfolio of CrowDevelopment, LLC.',
+  }
 
 const Portfolio: NextPage = () => {
     const projects = useSelector((state: any) => state.projects.projects);
@@ -24,11 +30,13 @@ const Portfolio: NextPage = () => {
             <h1 className={`${railwayThin.className} mt-8 text-center font-thin text-white text-5xl lg:text-left lg:ml-20 lg:text-7xl`}>Portfolio</h1>
             <div className="mt-6 text-white font-light text-2xl flex justify-center lg:justify-start lg:ml-20">
                 <button 
+                    aria-label="Show work related projects"
                     className={`transition duration-300 ease-in-out bg-custom-color ${selectedButton === 'Work' ? 'border-b-2 border-white' : 'hover:bg-custom-dark text-[#9D9C9C]'} py-2 px-4 w-[128.65px]`} 
                     onClick={() => setSelectedButton('Work')}>
                     Work
                 </button>
                 <button 
+                    aria-label="Show personal projects"
                     className={`transition duration-300 ease-in-out bg-custom-color ${selectedButton === 'Personal' ? 'border-b-2 border-white' : 'hover:bg-custom-dark text-[#9D9C9C]'} py-2 px-4`} 
                     onClick={() => setSelectedButton('Personal')}>
                     Projects

@@ -1,8 +1,14 @@
 "use client";
 import React from 'react';
+import { Metadata } from 'next'
 import { usePathname } from 'next/navigation'
 
 import SideNav from '@/components/admin/sidenav';
+
+export const metadata: Metadata = {
+    title: 'Admin | CrowDevelopment, LLC',
+    description: 'Admin panel for CrowDevelopment, LLC.',
+  }
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

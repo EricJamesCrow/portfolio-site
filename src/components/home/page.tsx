@@ -1,5 +1,4 @@
 import { type NextPage } from "next";
-import Head from "next/head";
 
 // components
 import Ripple from "@/components/ripple";
@@ -13,11 +12,6 @@ import Contact from "@/components/home/contact";
 const HomePage: NextPage = () =>  {
   return (
     <div className="overflow-x-hidden">
-      <Head>
-        <title></title>
-        <meta name="description" content="" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div className="fixed inset-0 z-0">
         <Ripple/>
       </div>

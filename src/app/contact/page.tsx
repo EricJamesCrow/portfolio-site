@@ -1,5 +1,6 @@
 "use client";
 import { type NextPage } from "next";
+import { Metadata } from 'next'
 import { useState } from "react";
 import {Input} from "@nextui-org/react";
 import {Textarea} from "@nextui-org/react";
@@ -12,6 +13,11 @@ import { Loader2 } from "lucide-react"
 // hooks
 import { useContact } from '@/hooks/useContact';
 import { useCustomToast } from "@/hooks/useCustomToast";
+
+export const metadata: Metadata = {
+    title: 'Contact | CrowDevelopment, LLC',
+    description: 'Contact CrowDevelopment, LLC for a free consultation on your next project.',
+  }
 
 const Contact: NextPage = () => {
     const { contact } = useContact();
@@ -91,7 +97,7 @@ const Contact: NextPage = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 />
-                <button disabled={loading} type="submit" className="bg-white text-black font-semibold text-sm h-9 rounded mt-2 hover:bg-gray-300 transition-all duration-200 w-full max-w-[320px] flex justify-center items-center">
+                <button aria-label={loading ? "Sending Email" : "Send Email"} disabled={loading} type="submit" className="bg-white text-black font-semibold text-sm h-9 rounded mt-2 hover:bg-gray-300 transition-all duration-200 w-full max-w-[320px] flex justify-center items-center">
                 {loading ? <Loader2 className="h-6 w-6 animate-spin" /> : 'Send Email'}
                     </button>
             </form>

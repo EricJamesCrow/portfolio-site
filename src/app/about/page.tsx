@@ -1,8 +1,14 @@
 import { type NextPage } from "next";
+import { Metadata } from 'next'
 import Image from 'next/image';
 import localFont from 'next/font/local';
 import { topTechnologies as technologies } from '@/lib/tech';
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
+
+export const metadata: Metadata = {
+    title: 'About | CrowDevelopment, LLC',
+    description: 'About CrowDevelopment, LLC.',
+  }
 
 const About: NextPage = () => {
     return (
@@ -12,7 +18,7 @@ const About: NextPage = () => {
                 <div className='xl:flex'>
                     <Image
                         src="/EricCrow.png"
-                        alt="About"
+                        alt="Image of Eric Crow"
                         width={300}
                         height={300}
                         className="rounded mx-auto lg:h-[30vw] lg:w-[30vw]"
@@ -39,7 +45,7 @@ const About: NextPage = () => {
                                     width={100}
                                     height={100}
                                     src={tech.image} 
-                                    alt={tech.name} />
+                                    alt={`${tech.name} logo`} />
                                 </div>
                         ))}    
                     </div>
@@ -49,36 +55,34 @@ const About: NextPage = () => {
                     <div className="mt-6 lg:mt-12 grid grid-cols-1 grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-20 items-center">
                         <Image
                             src="/CompTIA_A_plus.png"
-                            alt="CompTIA A+ Certification"
+                            alt="CompTIA A+ Certification Badge"
                             width={200}
                             height={200}
                             className="lg:w-[250px] lg:h-[250px] mx-auto"
                         />
                         <Image
                             src="/CompTIA_Network_plus.png"
-                            alt="CompTIA Network+ Certification"
+                            alt="CompTIA Network+ Certification Badge"
                             width={200}
                             height={200}
                             className="lg:w-[250px] lg:h-[250px] mx-auto"
                         />
                         <Image
                             src="/CompTIA_Cert_Badges_Specialist.png"
-                            alt="CompTIA CIOS Certification"
+                            alt="CompTIA CIOS Certification Badge"
                             width={200}
                             height={200}
                             className="lg:w-[250px] lg:h-[250px] mx-auto"
                         />
                         <Image
                             src="/ITILv4.png"
-                            alt="ITILv4 Certification"
+                            alt="ITILv4 Certification Badge"
                             width={200}
                             height={200}
                             className="lg:w-[250px] lg:h-[250px] mx-auto"
                         />
                     </div>
                 </div>
-
-
             </div>
         </div>
     )

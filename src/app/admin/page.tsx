@@ -11,7 +11,7 @@ const Dashboard: NextPage = () => {
     return (
       <>
         <div className="w-[85%] md:w-[90%] mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto lg:mt-8">
-            <Link href="/admin/projects" aria-label="Projects">
+            <Link href="/admin/projects" aria-label="Naviaget to admin projects panel">
               <Card text={'Projects'} IconComponent={FaGithub} />
             </Link>
         </div>
