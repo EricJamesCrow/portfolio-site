@@ -20,13 +20,13 @@ const About: React.FC = () => {
                     View About
                     </Link>
                 </div>
-                <div className="lg:mt-12 flex flex-col md:flex-row">
+                <div className="lg:mt-12 flex flex-col md:flex-row gap-6">
                     <Image
-                    src="/EricCrow.png"
+                    src="/EricCrow.webp"
                     alt="Image of Eric Crow"
                     width={200}
                     height={200}
-                    className="rounded mx-auto lg:h-[300px] lg:w-[300px] mb-6"
+                    className="rounded mx-auto lg:h-[300px] lg:w-[300px]"
                     />
                     <p className="font-light text-sm md:mx-8 lg:text-lg xl:mx-20 xl:mr-40">My name is Eric Crow and I&apos;m a Computer Science student at Western Governors University, set to graduate this fall. Over my academic journey, I have developed a strong interest in web development, particularly with React. This has led to hands-on projects, including a full-stack web application for Mantra Seeds. Such experiences have significantly improved my skills in React. As I approach graduation, I&apos;m not only looking forward to a professional web development role but also actively offering services for freelance web projects, keen to help businesses establish a robust online&nbsp;presence.</p>
                 </div>

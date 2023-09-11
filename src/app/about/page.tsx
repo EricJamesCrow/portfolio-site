@@ -17,7 +17,7 @@ const About: NextPage = () => {
             <div className="text-white font-light flex flex-col sm:m-12 mt-12 xl:mx-20">
                 <div className='xl:flex'>
                     <Image
-                        src="/EricCrow.png"
+                        src="/EricCrow.webp"
                         alt="Image of Eric Crow"
                         width={300}
                         height={300}
