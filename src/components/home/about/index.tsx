@@ -14,7 +14,6 @@ const About: React.FC = () => {
                     </h2>
                     <Link
                     href="/about"
-                    aria-label="Read more about Eric Crow"
                     className="lg:text-2xl underline hover:text-gray-300 transition duration-75"
                     >
                     View About

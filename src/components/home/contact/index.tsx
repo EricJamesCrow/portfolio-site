@@ -5,7 +5,7 @@ const Contact: React.FC = () => {
         <div className="relative bg-[#1F1F1F]">
             <div className="px-8 py-8 text-white lg:px-20 flex flex-col items-center">
                 <p className="text-center lg:text-2xl mt-12">Available for full-time roles and select freelance projects.</p>
-                <Link aria-label="Navigate to contact page" href="/contact"
+                <Link href="/contact"
                 className="mt-8 lg:mt-20 h-11 
                 w-full 
                 rounded-md 
