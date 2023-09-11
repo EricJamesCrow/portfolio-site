@@ -5,25 +5,12 @@ import Link from 'next/link'
 // components
 import Card from '@/components/home/portfolio/card'
 
-//redux
-import { useSelector } from 'react-redux'
+// data
+import { projects } from '@/lib/projects'
 
 const railwayThin = localFont({ src: '../../../../public/fonts/Raleway-Thin.ttf' })
 
 const Portfolio: React.FC = () => {
-    const projects = useSelector((state: any) => state.projects.projects);
-
-    const desiredOrder = ['Mantra Seeds', 'CrowDevelopment', 'ProteoMutics'];
-
-    const filteredProjects = projects.filter((project: any) => 
-        desiredOrder.includes(project.name)
-    );
-    
-    const orderedProjects = filteredProjects.sort((a: any, b: any) => 
-        desiredOrder.indexOf(a.name) - desiredOrder.indexOf(b.name)
-    );
-    
-
     return (
         <div className="relative bg-[#1E1E1E]">
             <div className="px-8 py-8 text-white lg:px-20 max-w-[1800px] mx-auto">
@@ -40,7 +27,7 @@ const Portfolio: React.FC = () => {
                         </Link>
                 </div>
                 <div className="grid grid-cols-1 gap-10 mb-6 lg:grid-cols-3">
-                    {orderedProjects.map((project: any) => (
+                    {projects.map((project: any) => (
                         <Card 
                         key={project.id} 
                         image={project.image} 
