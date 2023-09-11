@@ -17,7 +17,7 @@ const About: React.FC = () => {
                     aria-label="Read more about Eric Crow"
                     className="lg:text-2xl underline hover:text-gray-300 transition duration-75"
                     >
-                    Read More
+                    View About
                     </Link>
                 </div>
                 <div className="lg:mt-12 flex flex-col md:flex-row">
