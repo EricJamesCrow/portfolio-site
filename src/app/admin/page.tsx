@@ -1,4 +1,5 @@
 import { type NextPage } from "next";
+import { Metadata } from 'next'
 import Link from 'next/link';
 
 import Card from '@/components/admin/card';
@@ -6,6 +7,11 @@ import { FaGithub } from 'react-icons/fa';
 import { BsActivity } from 'react-icons/bs';
 import { BsFileEarmarkCode } from 'react-icons/bs';
 import { FiGlobe } from 'react-icons/fi';
+
+export const metadata: Metadata = {
+  title: 'Admin | CrowDevelopment, LLC',
+  description: 'Admin panel for CrowDevelopment, LLC.',
+}
 
 const Dashboard: NextPage = () => {
     return (

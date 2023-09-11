@@ -1,6 +1,5 @@
 "use client";
 import { type NextPage } from "next";
-import { Metadata } from 'next'
 import DataTable from "@/components/admin/DataTable";
 import EditProject from "@/components/admin/projects/editproject";
 import AddProject from "@/components/admin/projects/addproject";
@@ -8,11 +7,6 @@ import {useDisclosure} from "@nextui-org/react";
 import { useState } from "react";
 //redux
 import { useSelector } from 'react-redux'
-
-export const metadata: Metadata = {
-    title: 'Projects | CrowDevelopment, LLC',
-    description: 'Admin projects panel for CrowDevelopment, LLC.',
-  }
 
 const Projects: NextPage = () => {
     const projects = useSelector((state: any) => state.projects.projects);
