@@ -7,8 +7,12 @@ import {useDisclosure} from "@nextui-org/react";
 import { useState } from "react";
 //redux
 import { useSelector } from 'react-redux'
+// hooks
+import { useProjects } from '@/hooks/useProjects'
 
 const Projects: NextPage = () => {
+    const { fetchProjects } = useProjects();
+    fetchProjects();
     const projects = useSelector((state: any) => state.projects.projects);
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const [selectedProject, setSelectedProject] = useState<string>("");

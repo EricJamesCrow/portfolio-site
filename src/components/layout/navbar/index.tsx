@@ -7,14 +7,10 @@ import NextLink from "next/link";
 import Image from "next/image.js";
 import { useSession } from "next-auth/react";
 
-// hooks
-import { useProjects } from '@/hooks/useProjects'
-
 const NavBar: React.FC = () => {
   const pathname = usePathname();
   const { data: session } = useSession();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const { fetchProjects } = useProjects();
 
   const handleMenuOpenChange = (isOpen: boolean | undefined) => {
     if (isOpen !== undefined) {
@@ -37,8 +33,6 @@ const NavBar: React.FC = () => {
       menuItems = ["Admin", ...menuItems];
     }
   }
-
-  fetchProjects();
 
   return (
     <Navbar

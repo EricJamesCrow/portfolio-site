@@ -6,12 +6,17 @@ import localFont from 'next/font/local';
 //redux
 import { useSelector } from 'react-redux'
 
+// hooks
+import { useProjects } from '@/hooks/useProjects'
+
 // components
 import Card from '@/components/portfolio/card'
 
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
 
 const PortfolioPage: NextPage = () => {
+    const { fetchProjects } = useProjects();
+    fetchProjects();
     const projects = useSelector((state: any) => state.projects.projects);
     const [selectedButton, setSelectedButton] = useState<string>('Work');
 
