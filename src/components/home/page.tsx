@@ -1,7 +1,8 @@
 import { type NextPage } from "next";
+import dynamic from 'next/dynamic'
 
 // components
-import Ripple from "@/components/ripple";
+const Ripple = dynamic(() => import('@/components/ripple'))
 import Hero from "@/components/home/hero";
 import Tools from "@/components/home/tools";
 import About from "@/components/home/about";

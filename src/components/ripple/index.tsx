@@ -105,7 +105,7 @@ const AnimationCanvas = () => {
 const Ripple: React.FC = () => {
     return (
         <div className="w-screen h-screen bg-custom-color">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense>
                 <AnimationCanvas />
             </Suspense>
         </div>
