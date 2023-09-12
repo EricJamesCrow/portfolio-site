@@ -1,49 +1,41 @@
 "use client";
-import React from "react";
+import React, { Suspense, useCallback, useMemo, useRef } from "react";
 import * as THREE from 'three';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
-import { Suspense, useCallback, useMemo, useRef } from 'react';
 
-const CameraControls = () => {
-  return (
-    <OrbitControls
-      autoRotate
-      autoRotateSpeed={-0.1}
-      enableRotate={false}
-      enableZoom={false}
-    />
-  );
-}
+const CameraControls = React.memo(() => (
+  <OrbitControls
+    autoRotate
+    autoRotateSpeed={-0.1}
+    enableRotate={false}
+    enableZoom={false}
+  />
+));
 
-const Points = () => {
+const Points = React.memo(() => {
   const imgTex = useLoader(THREE.TextureLoader, './circle.png');
   const bufferRef = useRef<THREE.BufferAttribute | null>(null);
 
-
   let t = 0;
-  let f = 0.002;
-  let a = 3;
-  const graph = useCallback((x: number, z: number) => {
-    return Math.sin(f * (x ** 2 + z ** 2 + t)) * a;
-  }, [t, f, a])
+  const graph = useCallback((x: number, z: number) => (
+    Math.sin(0.002 * (x ** 2 + z ** 2 + t)) * 3
+  ), [t]);
 
   const count = 50;
   const sep = 6;
-  let positions = useMemo(() => {
-    let positions = []
-
+  const positions = useMemo(() => {
+    const posArray = [];
     for (let xi = 0; xi < count; xi++) {
       for (let zi = 0; zi < count; zi++) {
-        let x = sep * (xi - count / 2);
-        let z = sep * (zi - count / 2);
-        let y = graph(x, z);
-        positions.push(x, y, z);
+        const x = sep * (xi - count / 2);
+        const z = sep * (zi - count / 2);
+        const y = graph(x, z);
+        posArray.push(x, y, z);
       }
     }
-
-    return new Float32Array(positions);
-  }, [count, sep, graph])
+    return new Float32Array(posArray);
+  }, [count, sep, graph]);
 
   useFrame(() => {
     t += 10;
@@ -52,8 +44,8 @@ const Points = () => {
     let i = 0;
     for (let xi = 0; xi < count; xi++) {
       for (let zi = 0; zi < count; zi++) {
-        let x = sep * (xi - count / 2);
-        let z = sep * (zi - count / 2);
+        const x = sep * (xi - count / 2);
+        const z = sep * (zi - count / 2);
 
         positions[i + 1] = graph(x, z);
         i += 3;
@@ -61,7 +53,7 @@ const Points = () => {
     }
 
     bufferRef.current!.needsUpdate = true;
-  })
+  });
 
   return (
     <points>
@@ -74,7 +66,6 @@ const Points = () => {
           itemSize={3}
         />
       </bufferGeometry>
-
       <pointsMaterial
         attach="material"
         map={imgTex}
@@ -87,31 +78,26 @@ const Points = () => {
       />
     </points>
   );
-}
+});
 
-const AnimationCanvas = () => {
-  return (
-    <Canvas
+const AnimationCanvas = React.memo(() => (
+  <Canvas
     style={{ pointerEvents: 'none' }}
-      camera={{ position: [100, 10, 0], fov: 75 }}
-    >
-      <Suspense fallback={null}>
-        <Points />
-      </Suspense>
-      <CameraControls/>
-    </Canvas>
-  );
-}
+    camera={{ position: [100, 10, 0], fov: 75 }}
+  >
+    <Suspense fallback={null}>
+      <Points />
+    </Suspense>
+    <CameraControls />
+  </Canvas>
+));
 
-const Ripple: React.FC = () => {
-    return (
-        <div className="w-screen h-screen bg-custom-color">
-            <Suspense>
-                <AnimationCanvas />
-            </Suspense>
-        </div>
-    )
-}
+const Ripple: React.FC = () => (
+  <div className="w-screen h-screen bg-custom-color">
+    <Suspense fallback={null}>
+      <AnimationCanvas />
+    </Suspense>
+  </div>
+);
 
 export default React.memo(Ripple);
-
