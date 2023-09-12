@@ -12,8 +12,8 @@ import { useProjects } from '@/hooks/useProjects'
 
 const Projects: NextPage = () => {
     const { fetchProjects } = useProjects();
-    fetchProjects();
     const projects = useSelector((state: any) => state.projects.projects);
+    if (projects.length === 0) fetchProjects();
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const [selectedProject, setSelectedProject] = useState<string>("");
 
