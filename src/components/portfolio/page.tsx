@@ -16,8 +16,8 @@ const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' })
 
 const PortfolioPage: NextPage = () => {
     const { fetchProjects } = useProjects();
-    fetchProjects();
     const projects = useSelector((state: any) => state.projects.projects);
+    if (projects.length === 0) fetchProjects();
     const [selectedButton, setSelectedButton] = useState<string>('Work');
 
     const filteredProjects = projects.filter((project: any) => project.type === selectedButton);
