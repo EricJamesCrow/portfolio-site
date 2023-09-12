@@ -12,6 +12,7 @@ const CameraControls = React.memo(() => (
     enableZoom={false}
   />
 ));
+CameraControls.displayName = "CameraControls";
 
 const Points = React.memo(() => {
   const imgTex = useLoader(THREE.TextureLoader, './circle.png');
@@ -80,6 +81,8 @@ const Points = React.memo(() => {
   );
 });
 
+Points.displayName = "Points";
+
 const AnimationCanvas = React.memo(() => (
   <Canvas
     style={{ pointerEvents: 'none' }}
@@ -92,6 +95,8 @@ const AnimationCanvas = React.memo(() => (
   </Canvas>
 ));
 
+AnimationCanvas.displayName = "AnimationCanvas";
+
 const Ripple: React.FC = () => (
   <div className="w-screen h-screen bg-custom-color">
     <Suspense fallback={null}>
@@ -100,4 +105,6 @@ const Ripple: React.FC = () => (
   </div>
 );
 
-export default React.memo(Ripple);
+Ripple.displayName = "Ripple";
+
+export default Ripple;
