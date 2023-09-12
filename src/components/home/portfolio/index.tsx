@@ -1,4 +1,3 @@
-"use client";
 import localFont from 'next/font/local'
 import Link from 'next/link'
 
