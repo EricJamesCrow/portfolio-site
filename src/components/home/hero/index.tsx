@@ -7,10 +7,10 @@ const Hero: React.FC = () => {
     return (
         <div className="bg-custom-color h-[90vh] max-w-[1800px] mx-auto">
             <div className="relative z-10 mx-8 mt-6 text-white lg:mx-20 lg:mt-6">
-                <h1 className={`${railwayThin.className} font-light text-[52px] leading-tight bg-gradient-custom lg:text-[96px]`}>
+                <h1 className={`${railwayThin.className} font-light text-[52px] leading-tight bg-gradient-custom lg:text-8xl`}>
                 <span className="block lg:inline-block">Crow</span>Development
                 </h1>
-                <h2 className={`text-[24px] mt-4 mb-8 font-thin lg:text-[36px]`}>Custom-built web applications for your business</h2>
+                <h2 className={`text-2xl mt-4 mb-8 font-thin lg:text-4xl`}>Custom-built web applications for your business</h2>
                 <Link aria-label="Request a quote" href="/contact">
                     <button className="h-11 
                     w-full 
