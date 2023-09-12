@@ -28,8 +28,8 @@ const Points = () => {
     return Math.sin(f * (x ** 2 + z ** 2 + t)) * a;
   }, [t, f, a])
 
-  const count = window.innerWidth > 768 ? 100 : 50;
-  const sep = window.innerWidth > 768 ? 3 : 6;
+  const count = 50;
+  const sep = 6;
   let positions = useMemo(() => {
     let positions = []
 
