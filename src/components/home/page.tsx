@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import dynamic from 'next/dynamic'
 
 // components
-const Ripple = dynamic(() => import('@/components/ripple'))
+// const Ripple = dynamic(() => import('@/components/ripple'))
 import Hero from "@/components/home/hero";
 const Tools = dynamic(() => import('@/components/home/tools'))
 import About from "@/components/home/about";
@@ -14,7 +14,7 @@ const HomePage: NextPage = () =>  {
   return (
     <div className="overflow-x-hidden">
       <div className="fixed inset-0 z-0">
-        <Ripple/>
+        {/* <Ripple/> */}
       </div>
         <Hero/>
         <Tools/>
