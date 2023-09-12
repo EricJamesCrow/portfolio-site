@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import * as THREE from 'three';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
@@ -112,4 +113,5 @@ const Ripple: React.FC = () => {
     )
 }
 
-export default Ripple;
+export default React.memo(Ripple);
+
