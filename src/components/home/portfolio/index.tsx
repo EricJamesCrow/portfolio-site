@@ -1,8 +1,14 @@
+"use client";
 import localFont from 'next/font/local'
 import Link from 'next/link'
 
 // components
 import Card from '@/components/home/portfolio/card'
+
+//redux
+import { useSelector } from 'react-redux'
+// hooks
+import { useProjects } from '@/hooks/useProjects'
 
 // data
 import { projects } from '@/lib/projects'
@@ -10,6 +16,10 @@ import { projects } from '@/lib/projects'
 const railwayThin = localFont({ src: '../../../../public/fonts/Raleway-Thin.ttf' })
 
 const Portfolio: React.FC = () => {
+    const { fetchProjects } = useProjects();
+    const projectsRedux = useSelector((state: any) => state.projects.projects);
+    if (projectsRedux.length === 0) fetchProjects();
+
     return (
         <div className="relative bg-[#1E1E1E]">
             <div className="px-8 py-8 text-white lg:px-20 max-w-[1800px] mx-auto">
