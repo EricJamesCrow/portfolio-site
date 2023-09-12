@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 // components
 const Ripple = dynamic(() => import('@/components/ripple'), { ssr: false })
 import Hero from "@/components/home/hero";
-const Tools = dynamic(() => import('@/components/home/tools'))
+import Tools from "@/components/home/tools";
 import About from "@/components/home/about";
 import Portfolio from "@/components/home/portfolio";
 import Services from "@/components/home/services";
