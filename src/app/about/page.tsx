@@ -21,7 +21,7 @@ const About: NextPage = () => {
                         alt="Image of Eric Crow"
                         width={300}
                         height={300}
-                        className="rounded mx-auto lg:h-[30vw] lg:w-[30vw]"
+                        className="rounded mx-auto lg:h-[30vw] lg:w-[30vw] max-w-[520px] max-h-[520px]"
                     />
                     <div className="m-4 mt-8 xl:mt-0 xl:mx-20">
                         <div>
