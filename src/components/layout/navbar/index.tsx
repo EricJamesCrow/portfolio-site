@@ -43,55 +43,54 @@ const NavBar: React.FC = () => {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={handleMenuOpenChange}
     >
-    <div className="w-full max-w-[1800px] flex items-center mx-auto">
-        <NavbarContent justify="start">
-          <NavbarBrand>
-              <Image
-              src="/crow.svg"
-              alt="Crow Logo"
-              width={30}
-              height={30}
-              />
-          </NavbarBrand>
-        </NavbarContent>
 
-        <NavbarContent justify="end" className="sm:hidden">
-          <NavbarMenuToggle className="text-white" aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-        </NavbarContent>
+      <NavbarContent justify="start">
+        <NavbarBrand>
+            <Image
+            src="/crow.svg"
+            alt="Crow Logo"
+            width={30}
+            height={30}
+            />
+        </NavbarBrand>
+      </NavbarContent>
 
-        <NavbarContent className="hidden sm:show sm:flex gap-4 font-light" justify="end">
-        {session?.user.role === 'ADMIN' && <NavbarItem>
-            <Link as={NextLink} href="/admin" aria-label="Navigate to admin panel" className="text-blue-500">
-              Admin
-            </Link>
-          </NavbarItem>}
+      <NavbarContent justify="end" className="sm:hidden">
+        <NavbarMenuToggle className="text-white" aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:show sm:flex gap-4 font-light" justify="end">
+      {session?.user.role === 'ADMIN' && <NavbarItem>
+          <Link as={NextLink} href="/admin" aria-label="Navigate to admin panel" className="text-blue-500">
+            Admin
+          </Link>
+        </NavbarItem>}
+      <NavbarItem>
+          <Link as={NextLink} href="/" aria-label="Navigate to home page" className="text-white">
+            Home
+          </Link>
+        </NavbarItem>
         <NavbarItem>
-            <Link as={NextLink} href="/" aria-label="Navigate to home page" className="text-white">
-              Home
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link as={NextLink} href="/about" aria-label="Navigate to about page" className="text-white">
-              About
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link as={NextLink} href="/services" aria-label="Navigate to services page" className="text-white">
-              Services
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link as={NextLink} href="/portfolio" aria-label="Navigate to portfolio page" className="text-white">
-              Portfolio
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link as={NextLink} href="/contact" aria-label="Navigate to contact page" className="text-white">
-              Contact
-            </Link>
-          </NavbarItem>
-        </NavbarContent>
-      </div>
+          <Link as={NextLink} href="/about" aria-label="Navigate to about page" className="text-white">
+            About
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link as={NextLink} href="/services" aria-label="Navigate to services page" className="text-white">
+            Services
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link as={NextLink} href="/portfolio" aria-label="Navigate to portfolio page" className="text-white">
+            Portfolio
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link as={NextLink} href="/contact" aria-label="Navigate to contact page" className="text-white">
+            Contact
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
 
       <NavbarMenu className="bg-custom-color">
         {menuItems.map((item, index) => (
