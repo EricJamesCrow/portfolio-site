@@ -50,7 +50,7 @@ const About: NextPage = () => {
                         ))}    
                     </div>
                 </div>
-                <div className="m-4 xl:mt-20">
+                <div className="m-4 mb-0 xl:mt-20">
                     <h2 className="font-thin text-2xl mb-2 lg:text-3xl lg:mb-4l">Certifications</h2>
                     <div className="mt-6 lg:mt-12 grid grid-cols-1 grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-20 items-center">
                         <Image
