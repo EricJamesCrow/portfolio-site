@@ -15,6 +15,7 @@ const About: React.FC = () => {
                     <Link
                     href="/about"
                     className="lg:text-2xl underline hover:text-gray-300 transition duration-75"
+                    scroll={true}
                     >
                     View About
                     </Link>
