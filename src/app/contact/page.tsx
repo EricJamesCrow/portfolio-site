@@ -2,6 +2,9 @@ import { type NextPage } from "next";
 import { Metadata } from 'next';
 import ContactPage from "@/components/contact/page";
 
+// util
+import ScrollUp from "@/utils/ScrollUp";
+
 
 export const metadata: Metadata = {
     title: 'Contact | CrowDevelopment, LLC',
@@ -10,7 +13,10 @@ export const metadata: Metadata = {
 
 const Contact: NextPage = () => {
     return (
+        <>
+        <ScrollUp/>
         <ContactPage/>
+        </>
     )
 }
 

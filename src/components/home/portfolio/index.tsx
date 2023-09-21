@@ -31,7 +31,6 @@ const Portfolio: React.FC = () => {
                         href="/portfolio"
                         aria-label="View all projects"
                         className="lg:text-2xl underline hover:text-gray-300 transition duration-75"
-                        scroll={true}
                         >
                         View All
                         </Link>

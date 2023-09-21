@@ -23,7 +23,6 @@ const Contact: React.FC = () => {
                 flex items-center justify-center
                 mb-20
                 "
-                scroll={true}
                 >Contact Me
                 </Link>
             </div>
