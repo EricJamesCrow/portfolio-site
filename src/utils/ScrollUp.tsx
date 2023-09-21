@@ -1,4 +1,4 @@
-// ScrollUp.tsx
+"use client";
 import { useEffect } from 'react';
 
 const ScrollUp: React.FC = () => {
