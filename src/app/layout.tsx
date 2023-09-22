@@ -10,6 +10,9 @@ import { Toaster } from "@/components/ui/toaster"
 import NavBar from '@/components/layout/navbar'
 import Footer from '@/components/layout/footer'
 
+// utils
+import Scroll from '@/components/Scroll'
+
 const inter = Inter({
   weight: ['300', '400', '500', '700'],
   style: ['normal'],
@@ -31,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <Scroll />
         <body className={`${inter.className}`}>
           <Providers>
             <NavBar />
