@@ -19,7 +19,7 @@ const About: React.FC = () => {
                     View About
                     </Link>
                 </div>
-                <div className="lg:mt-12 flex flex-col md:flex-row gap-6">
+                <div className="lg:mt-12 flex flex-col md:flex-row gap-6 mb-6">
                     <Image
                     src="/EricCrow.webp"
                     alt="Image of Eric Crow"

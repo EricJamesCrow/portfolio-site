@@ -35,7 +35,7 @@ const Portfolio: React.FC = () => {
                         View All
                         </Link>
                 </div>
-                <div className="grid grid-cols-1 gap-10 mb-6 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-10 mb-6 lg:grid-cols-3 lg:mt-12">
                     {projects.map((project: any) => (
                         <Card 
                         key={project.id} 
