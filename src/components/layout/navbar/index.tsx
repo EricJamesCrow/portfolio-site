@@ -6,6 +6,7 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuIt
 import NextLink from "next/link";
 import Image from "next/image.js";
 import { useSession } from "next-auth/react";
+import Crow from "../../../../public/crow.svg";
 
 const NavBar: React.FC = () => {
   const pathname = usePathname();
@@ -47,7 +48,7 @@ const NavBar: React.FC = () => {
       <NavbarContent justify="start">
         <NavbarBrand>
             <Image
-            src="/crow.svg"
+            src={Crow}
             alt="Crow Logo"
             width={30}
             height={30}
