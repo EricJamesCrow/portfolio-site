@@ -7,6 +7,7 @@ import Card from '@/components/home/portfolio/card'
 
 //redux
 import { useSelector } from 'react-redux'
+
 // hooks
 import { useProjects } from '@/hooks/useProjects'
 
