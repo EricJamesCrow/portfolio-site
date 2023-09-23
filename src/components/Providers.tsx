@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic';
 
 // import {NextUIProvider} from "@nextui-org/system";
 const NextUIProvider = dynamic(() => import('@nextui-org/system').then(mod => mod.NextUIProvider), { 
-    ssr: false 
+    ssr: true
   });
   
 interface Props {
