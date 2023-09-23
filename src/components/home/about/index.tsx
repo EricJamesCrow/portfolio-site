@@ -1,6 +1,7 @@
 import localFont from 'next/font/local'
 import Link from 'next/link'
 import Image from 'next/image'
+import EricCrow from '../../../../public/EricCrow.webp'
 
 const railwayThin = localFont({ src: '../../../../public/fonts/Raleway-Thin.ttf' })
 
@@ -21,7 +22,8 @@ const About: React.FC = () => {
                 </div>
                 <div className="lg:mt-12 flex flex-col md:flex-row gap-6 mb-6">
                     <Image
-                    src="/EricCrow.webp"
+                    src={EricCrow}
+                    placeholder='blur'
                     alt="Image of Eric Crow"
                     width={200}
                     height={200}

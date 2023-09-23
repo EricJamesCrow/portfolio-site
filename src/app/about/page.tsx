@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import Image from 'next/image';
 import localFont from 'next/font/local';
 import { topTechnologies as technologies } from '@/lib/tech';
+import EricCrow from '../../../public/EricCrow.webp';
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
 
 export const metadata: Metadata = {
@@ -17,8 +18,9 @@ const About: NextPage = () => {
             <div className="text-white font-light flex flex-col sm:m-12 mt-12 xl:mx-20">
                 <div className='xl:flex'>
                     <Image
-                        src="/EricCrow.webp"
+                        src={EricCrow}
                         alt="Image of Eric Crow"
+                        placeholder="blur"
                         width={300}
                         height={300}
                         className="rounded mx-auto lg:h-[30vw] lg:w-[30vw] max-w-[520px] max-h-[520px]"
