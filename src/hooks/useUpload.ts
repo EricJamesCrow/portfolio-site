@@ -1,4 +1,4 @@
-const UPLOAD_URL = '/api/upload';
+const UPLOAD_URL = `${process.env.NEXTAUTH_URL}/api/upload`;
 
 export const useUpload = () => {
     

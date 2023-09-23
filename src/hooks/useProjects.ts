@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { setProjects, updateSingleProject, updateProjects } from "../redux/slices/projectSlice";
 import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 
-const PROJECTS_URL = "/api/project";
+const PROJECTS_URL = `${process.env.NEXTAUTH_URL}/api/project`;
 
 export const useProjects = () => {
     const dispatch = useDispatch();
