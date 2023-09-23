@@ -18,6 +18,7 @@ const Card: React.FC<Props> = ({ image, name, description, tech, url }) => {
                     src={image as string} 
                     width={800}
                     height={400}
+                    priority={true}
                     alt={`Image of ${name}`} 
                     className="rounded-sm ring-1 ring-slate-700" 
                 />
