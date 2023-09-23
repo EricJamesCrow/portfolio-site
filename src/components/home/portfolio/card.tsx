@@ -26,7 +26,7 @@ const Card: React.FC<Props> = ({ image, name, description, tech, url }) => {
                     <GoLinkExternal className="text-white text-3xl" />
                 </div>
             </a>
-            <div className="max-w-[800px]">
+            <div className="w-full max-w-[800px]">
                 <h2 className="font-light text-2xl">{name}</h2>
                 <p className="mt-2 text-sm font-light lg:h-[175px] xl:h-[115px] 2xl:h-[100px]">{description}</p>
                 <div className="flex flex-wrap gap-4 my-4 lg:h-[25px]">
