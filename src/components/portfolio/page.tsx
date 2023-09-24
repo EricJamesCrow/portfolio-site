@@ -11,6 +11,7 @@ import { useProjects } from '@/hooks/useProjects'
 
 // components
 import Card from '@/components/portfolio/card'
+import SkeletonCard from '@/components/portfolio/skeleton'
 
 const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
 
@@ -42,16 +43,26 @@ const PortfolioPage: NextPage = () => {
                 </button>
             </div>
             <div className="grid grid-cols-1 gap-10 dark text-foreground bg-[#161616] m-4 md:m-8 lg:mx-20">
-                {sortedProjects.map((project: any) => (
-                    <Card 
-                    key={project.id} 
-                    image={project.image} 
-                    name={project.name} 
-                    description={project.description}
-                    tech={project.tech}
-                    url={project.url}
-                    />
-                ))}
+            {sortedProjects.length > 0 ? (
+                    // If projects are available, render them
+                    sortedProjects.map((project: any) => (
+                        <Card 
+                        key={project.id} 
+                        image={project.image} 
+                        name={project.name} 
+                        description={project.description}
+                        tech={project.tech}
+                        url={project.url}
+                        />
+                    ))
+                ) : (
+                    // If no projects are available, render skeleton cards
+                    <>
+                        <SkeletonCard />
+                        <SkeletonCard />
+                        <SkeletonCard />
+                    </>
+                )}
                 </div>
         </div>
     );
