@@ -24,7 +24,7 @@ const Services: React.FC = () => {
                         </Link>
                 </div>
                 <div className="flex flex-col gap-16 lg:mt-12 mb-6">
-                {services.map((service) => (
+                {services.slice(0,5).map((service) => (
                     <Card
                     key={service.id}
                     title={service.title}

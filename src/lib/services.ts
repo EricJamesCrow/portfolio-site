@@ -3,6 +3,8 @@ import NextJS from '@/public/nextjs.svg';
 import AWS from '@/public/aws.svg';
 import SEO from '@/public/seo.svg';
 import Accessiblity from '@/public/accessibility.svg';
+import Electron from '@/public/electron.svg';
+import React from '@/public/react.svg';
 
 export const services = [
     {
@@ -39,5 +41,19 @@ export const services = [
         description: "Committed to providing a website that is accessible to the widest possible audience, regardless of technology or ability.",
         left: true,
         image: Accessiblity,
-    }
+    },
+    {
+        id: 6,
+        title: 'Desktop Apps',
+        description: "Desktop applications built using Electron that offer robust functionality and are optimized for all major operating systems. Ideal for software that requires high computational power or extensive feature sets.",
+        left: false,
+        image: Electron,
+    },
+    {
+        id: 7,
+        title: 'Mobile Apps',
+        description: "Cross-platform mobile applications developed using React Native for seamless performance and native-like experience on iOS and Android.",
+        left: true,
+        image: React,
+    },
 ]
