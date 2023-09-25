@@ -6,6 +6,7 @@ const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' })
 
 // components
 import Card from '@/components/services/card';
+import ContactCard from '@/components/services/contact';
 
 export const metadata: Metadata = {
     title: 'Services | CrowDevelopment, LLC',
@@ -26,6 +27,7 @@ const Services: NextPage = () => {
                     image={service.image}
                     />))}
             </div>
+            <ContactCard/>
         </div>
     )
 }
