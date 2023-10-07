@@ -1,24 +1,20 @@
 "use client";
-import { type NextPage } from "next";
 import { useState } from 'react';
 import localFont from 'next/font/local';
-
-//redux
-import { useSelector } from 'react-redux'
-
-// hooks
-import { useProjects } from '@/hooks/useProjects'
 
 // components
 import Card from '@/components/portfolio/card'
 import SkeletonCard from '@/components/portfolio/skeleton'
 
-const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
+// types
+import { Project } from '@/lib/types/projects'
 
-const PortfolioPage: NextPage = () => {
-    const { fetchProjects } = useProjects();
-    const projects = useSelector((state: any) => state.projects.projects);
-    if (projects.length === 0) fetchProjects();
+const railwayThin = localFont({ src: '../../../public/fonts/Raleway-Thin.ttf' });
+interface Props {
+    projects: Project[];
+}
+
+const PortfolioPage: React.FC<Props> = ( { projects }) => {
     const [selectedButton, setSelectedButton] = useState<string>('Work');
 
     const filteredProjects = projects.filter((project: any) => project.type === selectedButton);
