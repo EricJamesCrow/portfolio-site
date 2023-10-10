@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image';
 export interface Project {
     id: number;
     name: string;
@@ -5,8 +6,8 @@ export interface Project {
     url: string;
     type: string;
     tech: string[];
-    status: string;
-    image: string;
-    createdAt: string;
-    updatedAt: string;
+    status?: string;
+    image: string | StaticImageData;
+    createdAt?: string;
+    updatedAt?: string;
   }

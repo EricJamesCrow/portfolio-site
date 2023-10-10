@@ -10,18 +10,28 @@ interface Props {
     url: string;
 }
 
+const names = ["Mantra Seeds", "CrowDevelopment", "ProteoMutics"]
+
 const Card: React.FC<Props> = ({ image, name, description, tech, url }) => {
     return (
         <div className="flex flex-col lg:flex-row items-center lg:gap-4">
             <a href={url} aria-label={`Open ${name} project in a new window`} target="_blank" rel="noopener noreferrer" className="mb-2 relative lg:w-[60%] block hover:opacity-80 transition-opacity duration-300">
-                <Image 
+                {names.includes(name) ? <Image 
                     src={image as string} 
                     width={800}
                     height={400}
                     priority={true}
+                    placeholder='blur'
                     alt={`Image of ${name}`} 
                     className="rounded-sm ring-1 ring-slate-700" 
-                />
+                /> : <Image 
+                src={image as string} 
+                width={800}
+                height={400}
+                priority={true}
+                alt={`Image of ${name}`} 
+                className="rounded-sm ring-1 ring-slate-700" 
+            />}
                 <div className="rounded-sm absolute top-0 left-0 w-full max-w-[800px] h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50">
                     <GoLinkExternal className="text-white text-3xl" />
                 </div>
