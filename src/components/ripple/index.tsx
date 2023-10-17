@@ -18,9 +18,10 @@ const Points = React.memo(() => {
   const imgTex = useLoader(THREE.TextureLoader, './circle.png');
   const bufferRef = useRef<THREE.BufferAttribute | null>(null);
 
-  let t = 0;
+  const t = useRef(0);
+  const prevTimeRef = useRef(performance.now());
   const graph = useCallback((x: number, z: number) => (
-    Math.sin(0.002 * (x ** 2 + z ** 2 + t)) * 3
+    Math.sin(0.002 * (x ** 2 + z ** 2 + t.current)) * 3
   ), [t]);
 
   const count = 50;
@@ -39,7 +40,12 @@ const Points = React.memo(() => {
   }, [count, sep, graph]);
 
   useFrame(() => {
-    t += 10;
+    const currentTime = performance.now();
+    const delta = (currentTime - prevTimeRef.current) * 0.65; // ChatGPT: Delta time in seconds
+    prevTimeRef.current = currentTime; // ChatGPT: Store current time for the next frame
+
+    // ChatGPT: Now, use 'delta' to make frame rate independent changes
+    t.current += delta;
     const positions = bufferRef.current!.array;
 
     let i = 0;
