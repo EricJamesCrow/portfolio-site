@@ -34,7 +34,7 @@ const About: NextPage = () => {
                             <h2 className="font-thin text-2xl mb-2 lg:text-3xl lg:mb-4">Education</h2>
                             <p className="lg:text-xl">Western Governors University</p>
                             <p className="font-semibold lg:text-xl">Bachelor of Science in Computer Science</p>
-                            <p className="italic lg:text-xl">Expected Graduation: November 2023</p>
+                            <p className="italic lg:text-xl">Expected Graduation: April 2024</p>
                         </div>
                     </div>
                 </div>
