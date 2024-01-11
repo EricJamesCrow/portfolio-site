@@ -1,8 +1,19 @@
 import MantraSeeds from '../../public/MantraSeeds.webp'
 import CrowDevelopment from '../../public/CrowDevelopment.webp'
-import ProteoMutics from '../../public/ProteoMutics.webp'
+import BookMe from '../../public/book_me.webp'
+// import ProteoMutics from '../../public/ProteoMutics.webp'
 
 export const projects = [
+    {
+        id: 76,
+        name: 'BookMe',
+        description: "BookMe is a SaaS scheduling application in development that is built with NextJS, TypeScript, TailwindCSS, and Prisma. It is currently integrated with Google Calendar, with plans to add Zoom, Teams, and Stripe for payment processing.",
+        url: 'https://book-me-omega.vercel.app/signup',
+        tech: ["NextJS", "TailwindCSS", "Prisma", "TypeScript"],
+        image: BookMe,
+        type: "Work",
+        createdAt: "2024-01-11T04:52:59.997Z",
+    },
     {
         id: 69,
         name: 'Mantra Seeds',
@@ -23,14 +34,14 @@ export const projects = [
         type: "Personal",
         createdAt: "2023-09-04T19:39:22.564Z",
     },
-    {
-        id: 68,
-        name: 'ProteoMutics',
-        description: 'A bioinformatics program that plots patterns between mutations and nucleosomes.',
-        url: 'https://github.com/EricJamesCrow/ProteoMutics',
-        tech: ["React", "Redux", "Electron"],
-        image: ProteoMutics,
-        type: "Work",
-        createdAt: "2023-09-03T22:58:32.638Z",
-    }
+    // {
+    //     id: 68,
+    //     name: 'ProteoMutics',
+    //     description: 'A bioinformatics program that plots patterns between mutations and nucleosomes.',
+    //     url: 'https://github.com/EricJamesCrow/ProteoMutics',
+    //     tech: ["React", "Redux", "Electron"],
+    //     image: ProteoMutics,
+    //     type: "Work",
+    //     createdAt: "2023-09-03T22:58:32.638Z",
+    // }
 ]

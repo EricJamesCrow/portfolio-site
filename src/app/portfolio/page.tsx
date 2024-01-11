@@ -27,9 +27,6 @@ export default async function Portfolio() {
         return fetchedProjects.map(project => staticProjectMap.get(project.id) || project);
     };
     
-    
-    
-
     const projects = await fetchProjects();
 
     return (
