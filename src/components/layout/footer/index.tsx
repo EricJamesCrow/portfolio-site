@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
                     <PiGithubLogo size={40} className="hover:cursor-pointer"/>
                 </a>
             </div>
-            <p>© 2023 CrowDevelopment, LLC</p>
+            <p>© 2024 CrowDevelopment, LLC</p>
         </div>
     )
 }
