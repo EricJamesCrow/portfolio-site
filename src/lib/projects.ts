@@ -1,9 +1,18 @@
 import MantraSeeds from '../../public/MantraSeeds.webp'
-import CrowDevelopment from '../../public/CrowDevelopment.webp'
+import XandraSwimwear from '../../public/xandraswimwear.webp'
 import BookMe from '../../public/book_me.webp'
-// import ProteoMutics from '../../public/ProteoMutics.webp'
 
 export const projects = [
+    {
+        id: 77,
+        name: 'Xandra Swimwear',
+        description: "Headless e-commerce web application built with Shopify Hydrogen and TailwindUI components, with ongoing updates to ensure continuous improvement.",
+        url: 'https://xandraswimwear.com/',
+        tech: ["React", "TailwindCSS", "TypeScript"],
+        image: XandraSwimwear,
+        type: "Work",
+        createdAt: "2023-09-04T19:39:22.564Z",
+    },
     {
         id: 76,
         name: 'BookMe',
@@ -23,16 +32,6 @@ export const projects = [
         image: MantraSeeds,
         type: "Work",
         createdAt: "2023-09-03T23:02:49.510Z",
-    },
-    {
-        id: 74,
-        name: 'CrowDevelopment',
-        description: 'Portfolio website created with NextJS, TailwindCSS, Next-Auth, and Prisma. Deployed with Vercel using a Postgres database.',
-        url: 'https://www.crowdevelopment.io/',
-        tech: ["NextJS", "Prisma", "TailwindCSS", "TypeScript"],
-        image: CrowDevelopment,
-        type: "Personal",
-        createdAt: "2023-09-04T19:39:22.564Z",
     },
     // {
     //     id: 68,
